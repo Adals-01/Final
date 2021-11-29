@@ -33,18 +33,33 @@ console.log(data);
  function Storage(props) {
     return (
    <section> 
-     <h1>barname: {props.data && props.data.bar.name}</h1>
-     <p> time: {props.data ? props.data.timestamp:"hello"}</p>
-     <p> time: {props.data ? props.data.storage[0].name:"hello"}</p>
+     <div>Hello</div>
+   <p> time: {props.data ? props.data.timestamp:"hello"}</p>
+    <h1>barname: {props.data && props.data.bar.name}</h1>
+     <p> time: {props.data ? props.data.storage[0].name:"hello"}</p> 
     </section> 
     );
   }   
+
+
+  function Orderlist(props) {
+    console.log(props)
+ const queueList = props.data.queue.map((order) =>  <li key={order.id}> {order.id}{" "}</li>);
+    return (
+   <section> 
+     <h2>Orders here:</h2>
+     {queueList}
+    </section> 
+    ); 
+  }   
+
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
          <Storage data={data}/> 
+         <Orderlist data={data}/>
         <p>Hello Vite + React!</p>
         <p>
           
