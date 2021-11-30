@@ -7,9 +7,9 @@ import "./App.scss";
 function App() {
   const [count, setCount] = useState(0);
   const [data, setStorage] = useState([]);
- console.log 
   const url = "https://foobar-team10.herokuapp.com/";
 console.log(url);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -21,7 +21,7 @@ console.log(url);
       }
     };
     const id = setInterval(() => {
-      fetchData(); // <-- (3) invoke in interval callback
+      fetchData();
     }, 5000);
     fetchData();
     return () => clearInterval(id);
@@ -34,9 +34,9 @@ console.log(data);
     return (
    <section> 
      <div>Hello</div>
-   <p> time: {props.data ? props.data.timestamp:"hello"}</p>
+   <p> time: {props.data &&  props.data.timestamp}</p>
     <h1>barname: {props.data && props.data.bar.name}</h1>
-     <p> time: {props.data ? props.data.storage[0].name:"hello"}</p> 
+     <p> time: {props.data &&  props.data.storage[0].name}</p> 
     </section> 
     );
   }   
