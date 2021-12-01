@@ -1,87 +1,75 @@
-import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
+import React, { useState, useEffect } from "react";
 import "./App.scss";
 
+   
 
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [data, setStorage] = useState([]);
-  const url = "https://foobar-team10.herokuapp.com/";
-console.log(url);
+
+  const [data, setItems] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
+
+    const fetchItems = async () => {
       try {
-        const res = await fetch(url);
-        const json = await res.json();
-        setStorage(json);
-      } catch (error) {
-        console.log(error);
+        const response = await fetch(`https://foobar-team10.herokuapp.com/`);
+        const data = await response.json();
+        setItems(data);
+      } catch (err) {
+        console.log(err);
       }
-    };
+    }
     const id = setInterval(() => {
-      fetchData();
-    }, 5000);
-    fetchData();
+      fetchItems();
+    }, 25000);
+    fetchItems();
     return () => clearInterval(id);
+
   }, []);
-
-
-console.log(data);
-
- function Storage(props) {
+  
+  function Overview(props) {
     return (
    <section> 
      <div>Hello</div>
-   <p> time: {props.data &&  props.data.timestamp}</p>
-    <h1>barname: {props.data && props.data.bar.name}</h1>
-     <p> time: {props.data &&  props.data.storage[0].name}</p> 
+   <p> time: {props.timestamp}</p>
+   
+ {/*  <h1>Hello {props.bar.name} </h1>  
+<p> Tap: {props.storage[0].name}</p>  */}
     </section> 
     );
   }   
 
 
-  function Orderlist(props) {
-    console.log(props)
- const queueList = props.data.queue.map((order) =>  <li key={order.id}> {order.id}{" "}</li>);
+
+/*   function StorageList(props) {
+    const StorageList = [props.storage]
+    const newArray = storage.map((storage) => <StorageItem  key={storage.id} {...storage} />);
     return (
-   <section> 
-     <h2>Orders here:</h2>
-     {queueList}
-    </section> 
-    ); 
-  }   
+      <section>
+        <h1> Productlist </h1>
+        <section className="Productlist">{newArray}</section>
+      </section>
+    );
+  }
+   */
+  function StorageItem() {
+     return (
+      <section>
+        <h1> Productlist </h1>
+      </section>)
+  }
 
-
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-         <Storage data={data}/> 
-         <Orderlist data={data}/>
-        <p>Hello Vite + React!</p>
-        <p>
-          
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-            Learn React
-          </a>
-          {" | "}
-          <a className="App-link" href="https://vitejs.dev/guide/features.html" target="_blank" rel="noopener noreferrer">
-            Vite Docs
-          </a>
-        </p>
-      </header>
+      <div>
+      {data && <Overview  data={data}/> }
+{/*   {data && <StorageList storage ={data.storage}/> }    */}
+      </div>
     </div>
   );
-}
+  }
+
+
 
 export default App;
