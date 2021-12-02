@@ -1,0 +1,45 @@
+@use "../base/colors.scss";
+
+.storage-list {
+  border: 1px color;
+  display: flex;
+  border: 1px colors.$white solid;
+  border-radius: 20px;
+  position: relative;
+  justify-content: center;
+  padding: 2rem 0rem 4rem 0rem;
+}
+
+.slanted-text-container {
+  height: 8rem;
+  position: relative;
+  h3 {
+    position: absolute;
+    transform: rotate(-40deg);
+    text-decoration: underline;
+  }
+}
+
+.storage-item {
+  width: calc(80vw / 10);
+}
+
+.keg-container {
+  position: relative;
+}
+
+.keg-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.keg-amount {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  color: colors.$black;
+}

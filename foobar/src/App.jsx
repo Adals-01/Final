@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.scss";
+import keg from './assets/keg-icon.svg';
 
 function App() {
   const [data, setItems] = useState([]);
@@ -16,7 +17,7 @@ function App() {
     };
     const id = setInterval(() => {
       fetchItems();
-    }, 5000);
+    }, 65000);
     fetchItems();
     return () => clearInterval(id);
   }, []);
@@ -46,9 +47,15 @@ function App() {
 
 function StorageItem(props) {
   return (
+
     <div className="storage-item">
-    <h2>{props.name}</h2>
-    <p>{props.amount}</p>
+      <div className="slanted-text-container">
+        <h3>{props.name}</h3>
+      </div>
+    <div className="keg-container">
+      <img className="keg-icon"  src={keg} alt={'keg-icon'}/>
+      <p className="keg-amount">{props.amount}</p>
+    </div>
     </div>
   )
 }
