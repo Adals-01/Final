@@ -1,13 +1,42 @@
 @font-face {
-  font-family: mundial-hair;
-  font-weight: 100;
+  font-family: "mundial-hair";
+  src: url("https://use.typekit.net/af/4166ac/00000000000000007735ee03/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3") format("woff2"),
+    url("https://use.typekit.net/af/4166ac/00000000000000007735ee03/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3") format("woff"),
+    url("https://use.typekit.net/af/4166ac/00000000000000007735ee03/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3") format("opentype");
+  font-display: auto;
   font-style: normal;
-  src: url("https://use.typekit.net/ctk7seo.css");
+  font-weight: 100;
 }
 
 @font-face {
-  font-family: mundial-bold;
-  font-weight: 300;
+  font-family: "mundial-bold";
+  src: url("https://use.typekit.net/af/4317f4/00000000000000007735ee0b/30/l?subset_id=2&fvd=n3&v=3") format("woff2"), url("https://use.typekit.net/af/4317f4/00000000000000007735ee0b/30/d?subset_id=2&fvd=n3&v=3") format("woff"),
+    url("https://use.typekit.net/af/4317f4/00000000000000007735ee0b/30/a?subset_id=2&fvd=n3&v=3") format("opentype");
+  font-display: auto;
   font-style: normal;
-  src: url("https://use.typekit.net/ctk7seo.css");
+  font-weight: 300;
+}
+
+//h1 greeting, h2 section header
+h1,
+h2 {
+  font-family: mundial-hair;
+  font-size: 2em;
+}
+
+//  queue id, storage beer name
+h3 {
+  font-family: mundial-bold;
+  font-size: 1em;
+}
+
+//reciept date and time, overview small text
+p {
+  font-family: mundial-hair;
+  font-size: 0.8em;
+}
+
+li {
+  font-family: mundial-hair;
+  font-size: 1em;
 }

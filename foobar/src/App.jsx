@@ -25,7 +25,7 @@ function App() {
     
     return (
       <section className="overview">
-        <div>Hello</div>
+        <h1>Hello</h1>
       <p> time: {props.data.timestamp}</p> 
 
      <h1>Hello {props.data.bar && props.data.bar.name} </h1>
