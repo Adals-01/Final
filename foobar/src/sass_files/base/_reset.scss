@@ -1,7 +1,11 @@
+@use "colors";
+
 html,
 body {
   padding: 0;
   margin: 0;
+  background-color: colors.$black;
+  color: colors.$white;
 }
 html {
   font-size: 1em;
