@@ -89,6 +89,24 @@ function QueueItem(props) {
     </div>
   )
 }
+  function ServingList(props) {
+  const servingArr = props.serving.map((serving, index) => <ServingItem key={index} {...serving} />); 
+  return  (
+    <section className="serving-list">
+     {servingArr}
+      </section>
+  )}
+
+function ServingItem(props) {
+  /*  const queueItemArr = props.order.map((order, index) => <QueueItemOrder key={index} order={order} />); */
+  return (
+    <div>
+    <h2>SERVING #{props.id}</h2>
+{/*    <div>{queueItemArr}</div> */}
+  {props.order.map((order, index) => <div key={index}>{order}</div>)} 
+    </div>
+  )
+}
 
 
 
@@ -101,6 +119,7 @@ function QueueItem(props) {
         {data.storage && <StorageList storages={data.storage} /> }
       {data.taps && <TapList taps={data.taps} /> }
       {data.queue && <QueueList queue={data.queue} /> }
+      {data.serving && <ServingList serving={data.serving} /> }
       </div>
     </div>
   );
