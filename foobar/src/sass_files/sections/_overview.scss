@@ -1,0 +1,22 @@
+.overview {
+  padding-bottom: 4rem;
+  .stats {
+    display: flex;
+    grid-column-gap: 4rem;
+    border: 1px solid white;
+    border-radius: 1rem;
+    width: 32rem;
+    justify-content: center;
+
+    .statsItem {
+      text-align: center;
+      padding: 1rem;
+      .statNumber {
+        font-size: 3.4em;
+      }
+      p {
+        margin: 0;
+      }
+    }
+  }
+}

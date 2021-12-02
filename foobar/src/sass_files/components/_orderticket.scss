@@ -1,3 +1,32 @@
-.queue-item {
-  border: 1px black solid;
+@use "../base/colors";
+
+.queue-item,
+.serving-item {
+  border: 1px white solid;
+  background-color: colors.$white;
+  color: colors.$black;
+  padding: 1rem;
+  width: 8rem;
+  height: 10rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  li {
+    text-align: left;
+  }
+  h3 {
+    margin: 0;
+  }
+  p {
+    padding: 0.1rem;
+    border-top: 1px dashed black;
+    border-bottom: 1px dashed black;
+  }
+}
+
+.serving-item {
+  h3 {
+    color: mediumaquamarine;
+  }
 }
