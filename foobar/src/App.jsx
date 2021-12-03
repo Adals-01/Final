@@ -46,7 +46,7 @@ function App() {
     };
     const id = setInterval(() => {
       fetchItems();
-    }, 55000);
+    }, 5000);
     fetchItems();
     return () => clearInterval(id);
   }, []);
