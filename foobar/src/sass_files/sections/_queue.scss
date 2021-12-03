@@ -1,6 +1,8 @@
 .serving-and-queue {
   display: inline-flex;
   grid-column-gap: 2rem;
+  max-width: 75vw;
+  overflow-y: auto;
 }
 
 .queue-list {

@@ -1,6 +1,19 @@
 import React, { useState, useEffect } from "react";
 import "./App.scss";
 import keg from './assets/keg-icon.svg';
+import logo from './assets/foobar-logo.svg';
+import elhefe from './assets/elhefe.png';
+import fairytaleale from './assets/fairytaleale.png';
+import githop from './assets/githop.png';
+import hollaback from './assets/hollaback.png';
+import hoppilyeverafter from './assets/hoppilyeverafter.png';
+import mowintime from './assets/mowintime.png';
+import row26 from './assets/row26.png';
+import ruinedchildhood from './assets/ruinedchildhood.png';
+import sleighride from './assets/sleighride.png';
+import steampunk from './assets/steampunk.png';
+
+
 
 function App() {
   const [data, setItems] = useState([]);
@@ -17,7 +30,7 @@ function App() {
     };
     const id = setInterval(() => {
       fetchItems();
-    }, 65000);
+    }, 5000);
     fetchItems();
     return () => clearInterval(id);
   }, []);
@@ -47,7 +60,6 @@ function App() {
   }
 
   function StorageList(props) {
-    console.log(props.storage);
     const storageArr = props.storages.map((storage, index) => <StorageItem key={index} {...storage} />);
     return <section className="storage-list">{storageArr}</section>;
   }
@@ -68,15 +80,20 @@ function StorageItem(props) {
   )
 }
   function TapList(props) {
+    
     console.log(props.taps);
     const tapArr = props.taps.map((tap) => <TapItem key={tap.id} {...tap} />);
     return <section className="tap-list">{tapArr}</section>;
   }
 
   function TapItem(props) {
+    const beer = props.beer;
+    let beerimg = beer.replace(/\s+/g, '').toLowerCase(); 
+    console.log(beerimg);
     return (
       <div className="tap-item">
-        <h2>{props.beer}</h2>
+        <img className="beer-label"  src={elhefe} alt={beerimg}/>
+        <h3>{props.beer}</h3>
         <p>{props.level}</p>
         <p>{props.capacity}</p>
       </div>
@@ -132,7 +149,7 @@ function StorageItem(props) {
         <div className="right-side">
           <div className="overview-logo">
             <Overview data={data} />
-            <div>Logo</div>
+            <img className="foobar-logo"  src={logo} alt={'foobar-logo'}/>
           </div>
           <div className="serving-and-queue">
             {data.serving && <ServingList serving={data.serving} />}

@@ -1,6 +1,11 @@
 main {
   display: grid;
   grid-template-columns: 1fr 5fr;
+  margin: 1.5rem 5vw;
+}
+
+.right-side > * {
+  margin: 1rem 0rem;
 }
 
 .overview-logo {

@@ -3,11 +3,9 @@
 .storage-list {
   border: 1px color;
   display: flex;
-  border: 1px colors.$white solid;
+
   border-radius: 20px;
   position: relative;
-  justify-content: center;
-  padding: 2rem 0rem 4rem 0rem;
 }
 
 .slanted-text-container {
@@ -15,13 +13,18 @@
   position: relative;
   h3 {
     position: absolute;
-    transform: rotate(-40deg);
+    white-space: nowrap;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: rotate(-25deg);
+    transform-origin: bottom left;
     text-decoration: underline;
   }
 }
 
 .storage-item {
-  width: calc(80vw / 10);
+  width: calc(70vw / 10);
 }
 
 .keg-container {
