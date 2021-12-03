@@ -3,21 +3,19 @@
 .storage-list {
   border: 1px color;
   display: flex;
-
-  border-radius: 20px;
   position: relative;
 }
 
 .slanted-text-container {
-  height: 8rem;
+  height: 5rem;
   position: relative;
   h3 {
     position: absolute;
     white-space: nowrap;
-    top: 35%;
+    top: 0%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transform: rotate(-25deg);
+    transform: rotate(-20deg);
     transform-origin: bottom left;
     text-decoration: underline;
   }

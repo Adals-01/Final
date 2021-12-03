@@ -1,8 +1,11 @@
 .overview {
-  padding-bottom: 4rem;
+  h1 {
+    line-height: 0rem;
+    margin-bottom: 3rem;
+  }
   .stats {
     display: flex;
-    grid-column-gap: 4rem;
+    gap: 4rem;
     border: 1px solid white;
     border-radius: 1rem;
     width: 32rem;

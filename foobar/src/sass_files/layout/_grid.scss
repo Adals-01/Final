@@ -1,11 +1,17 @@
+@use "../base/colors.scss";
+
 main {
   display: grid;
-  grid-template-columns: 1fr 5fr;
-  margin: 1.5rem 5vw;
+  grid-template-columns: 2fr 4fr;
+  margin: 5vh 5vw 0rem 3vw;
+}
+
+aside {
+  margin-right: 3vw;
 }
 
 .right-side > * {
-  margin: 1rem 0rem;
+  margin: 0rem 0rem 1rem 0rem;
 }
 
 .overview-logo {

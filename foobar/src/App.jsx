@@ -5,7 +5,7 @@ import logo from './assets/foobar-logo.svg';
 import elhefe from './assets/elhefe.png';
 import fairytaleale from './assets/fairytaleale.png';
 import githop from './assets/githop.png';
-import hollaback from './assets/hollaback.png';
+import hollabacklager from './assets/hollaback.png';
 import hoppilyeverafter from './assets/hoppilyeverafter.png';
 import mowintime from './assets/mowintime.png';
 import row26 from './assets/row26.png';
@@ -13,6 +13,22 @@ import ruinedchildhood from './assets/ruinedchildhood.png';
 import sleighride from './assets/sleighride.png';
 import steampunk from './assets/steampunk.png';
 
+const images = {
+  elhefe,
+  fairytaleale,
+  githop,
+  hollabacklager,
+  hoppilyeverafter,
+  mowintime,
+  row26,
+  ruinedchildhood,
+  sleighride,
+  steampunk
+};
+
+function getImageByKey(key, i) {
+  return images[key]
+}
 
 
 function App() {
@@ -30,7 +46,7 @@ function App() {
     };
     const id = setInterval(() => {
       fetchItems();
-    }, 5000);
+    }, 55000);
     fetchItems();
     return () => clearInterval(id);
   }, []);
@@ -87,15 +103,32 @@ function StorageItem(props) {
   }
 
   function TapItem(props) {
+    
     const beer = props.beer;
     let beerimg = beer.replace(/\s+/g, '').toLowerCase(); 
     console.log(beerimg);
     return (
       <div className="tap-item">
-        <img className="beer-label"  src={elhefe} alt={beerimg}/>
-        <h3>{props.beer}</h3>
-        <p>{props.level}</p>
-        <p>{props.capacity}</p>
+        <img className="beer-label"  src={getImageByKey(beerimg)} alt={beerimg}/>
+        <h3>{/* {props.beer} */}</h3>
+        <div className="tap-levels-container">
+        <p  style={{
+          height: "1rem",
+          width: `calc(${props.level}vw/2500*8)`,
+          backgroundColor: "white",
+          border: "1px solid white",
+          borderRadius: "0.5rem" ,
+        }}>
+       </p>
+        <p  style={{
+          height: "1rem",
+          width: `calc(${props.capacity}vw/2500*8)`,
+          border: "1px solid white",
+          borderRadius: "0.5rem" ,
+        }}>
+       </p>
+     
+      </div>
       </div>
     );
   }
@@ -121,6 +154,7 @@ function StorageItem(props) {
     );
   }
   function ServingList(props) {
+    
     const servingArr = props.serving.map((serving, index) => <ServingItem key={index} {...serving} />);
     return <section className="queue-list">{servingArr}</section>;
   }
@@ -145,16 +179,22 @@ function StorageItem(props) {
   return (
     <div className="App">
       <main>
-        <aside>{data.taps && <TapList taps={data.taps} />}</aside>
+        
+        <aside>
+          <h2>Taps</h2>
+          {data.taps && <TapList taps={data.taps} />}
+        </aside>
         <div className="right-side">
           <div className="overview-logo">
             <Overview data={data} />
             <img className="foobar-logo"  src={logo} alt={'foobar-logo'}/>
           </div>
+          <h2>Orders</h2>
           <div className="serving-and-queue">
             {data.serving && <ServingList serving={data.serving} />}
             {data.queue && <QueueList queue={data.queue} />}
           </div>
+          <h2>Storage</h2>
           {data.storage && <StorageList storages={data.storage} />}
         </div>
       </main>

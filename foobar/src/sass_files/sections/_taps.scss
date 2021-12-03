@@ -1,3 +1,36 @@
+@use "../base/colors.scss";
+
+aside {
+  border: 1px solid colors.$white;
+  border-radius: 20px;
+  h2 {
+    text-align: center;
+  }
+}
+
 .beer-label {
-  max-width: 2em;
+  max-width: 100%;
+  width: 3vw;
+  height: auto;
+  display: block;
+  border-radius: 1.5rem;
+}
+
+.tap-list {
+  display: grid;
+  border-radius: 20px;
+}
+
+.tap-item {
+  padding-top: 2vh;
+  padding-left: 2vw;
+  display: flex;
+}
+
+.tap-levels-container {
+  position: relative;
+  margin-left: 2vw;
+  p {
+    position: absolute;
+  }
 }
