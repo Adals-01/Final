@@ -8,10 +8,10 @@ export default function Overview(props) {
       <h1>
         {/* <p> time: {props.data.timestamp}</p> */}
         {(() => {
-          if (hour === 12 || 13 || 14 || 15 || 16) {
-            return <AfternoonGreeting />;
-          } else if (hour === 17 || 18 || 19 || 20 || 21 || 22 || 23 || 24 || 1 || 2 || 3 || 4) {
+          if (hour === 17 || hour === 18 || hour === 19 || hour === 20 || hour === 21 || hour === 22 || hour === 23 || hour === 24 || hour === 1 || hour === 2 || hour === 3 || hour === 4) {
             return <EveningGreeting />;
+          } else if (hour === 12 || hour === 13 || hour === 14 || hour === 15 || hour === 16) {
+            return <AfternoonGreeting />;
           } else {
             return <MorningGreeting />;
           }
