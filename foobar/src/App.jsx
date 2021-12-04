@@ -1,34 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./App.scss";
-import keg from "./assets/keg-icon.svg";
+// import keg from "./assets/keg-icon.svg";
 import logo from "./assets/foobar-logo.svg";
-import elhefe from "./assets/elhefe.png";
-import fairytaleale from "./assets/fairytaleale.png";
-import githop from "./assets/githop.png";
-import hollabacklager from "./assets/hollaback.png";
-import hoppilyeverafter from "./assets/hoppilyeverafter.png";
-import mowintime from "./assets/mowintime.png";
-import row26 from "./assets/row26.png";
-import ruinedchildhood from "./assets/ruinedchildhood.png";
-import sleighride from "./assets/sleighride.png";
-import steampunk from "./assets/steampunk.png";
-
-const images = {
-  elhefe,
-  fairytaleale,
-  githop,
-  hollabacklager,
-  hoppilyeverafter,
-  mowintime,
-  row26,
-  ruinedchildhood,
-  sleighride,
-  steampunk,
-};
-
-function getImageByKey(key, i) {
-  return images[key];
-}
+import Overview from "./components/Overview";
+import StorageList from "./components/StorageList";
+import TapList from "./components/TapList";
+import QueueList from "./components/QueueList";
+import ServingList from "./components/ServingList";
 
 function App() {
   const [data, setItems] = useState([]);
@@ -49,149 +27,6 @@ function App() {
     fetchItems();
     return () => clearInterval(id);
   }, []);
-  function MorningGreeting(props) {
-    return "Good Morning";
-  }
-
-  function AfternoonGreeting(props) {
-    return "Good Afternoon";
-  }
-  function EveningGreeting(props) {
-    return "Good Evening";
-  }
-  function Overview(props) {
-    const unixtime = props.data.timestamp;
-    var date = new Date(unixtime);
-    const hour = date.getHours();
-    console.log(hour);
-    return (
-      <section className="overview">
-        <h1>
-          {/* <p> time: {props.data.timestamp}</p> */}
-          {(() => {
-            if (hour === 12 || 13 || 14 || 15 || 16) {
-              return <AfternoonGreeting />;
-            } else if (hour === 17 || 18 || 19 || 20 || 21 || 22 || 23 || 24 || 1 || 2 || 3 || 4) {
-              return <EveningGreeting />;
-            } else {
-              return <MorningGreeting />;
-            }
-          })()}
-          , {props.data.bar && props.data.bar.name} Team!
-        </h1>
-        <div className="stats">
-          <div className="statsItem">
-            <div className="statNumber">?</div>
-            <p> Orders Completed </p>
-          </div>
-          <div className="statsItem">
-            <div className="statNumber">{props.data.queue && props.data.queue.length}</div>
-            <p> Orders in Line</p>
-          </div>
-          <div className="statsItem">
-            <div className="statNumber">{props.data.taps && props.data.taps.length}</div>
-            <p> Beers on Tap </p>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  function StorageList(props) {
-    const storageArr = props.storages.map((storage, index) => <StorageItem key={index} {...storage} />);
-    return <section className="storage-list">{storageArr}</section>;
-  }
-
-  function StorageItem(props) {
-    return (
-      <div className="storage-item">
-        <div className="slanted-text-container">
-          <h3>{props.name}</h3>
-        </div>
-        <div className="keg-container">
-          <img className="keg-icon" src={keg} alt={"keg-icon"} />
-          <p className="keg-amount">{props.amount}</p>
-        </div>
-      </div>
-    );
-  }
-  function TapList(props) {
-    console.log(props.taps);
-    const tapArr = props.taps.map((tap) => <TapItem key={tap.id} {...tap} />);
-    return <section className="tap-list">{tapArr}</section>;
-  }
-
-  function TapItem(props) {
-    const beer = props.beer;
-    let beerimg = beer.replace(/\s+/g, "").toLowerCase();
-    console.log(beerimg);
-    return (
-      <div className="tap-item">
-        <img className="beer-label" src={getImageByKey(beerimg)} alt={beerimg} />
-        <h3>{/* {props.beer} */}</h3>
-        <div className="tap-levels-container">
-          <p
-            style={{
-              height: "1rem",
-              width: `calc(${props.level}vw/2500*8)`,
-              backgroundColor: "white",
-              border: "1px solid white",
-              borderRadius: "0.5rem",
-            }}
-          ></p>
-          <p
-            style={{
-              height: "1rem",
-              width: `calc(${props.capacity}vw/2500*8)`,
-              border: "1px solid white",
-              borderRadius: "0.5rem",
-            }}
-          ></p>
-        </div>
-      </div>
-    );
-  }
-
-  function QueueList(props) {
-    const queueArr = props.queue.map((queue, index) => <QueueItem key={index} {...queue} />);
-    return <section className="queue-list">{queueArr}</section>;
-  }
-
-  function QueueItem(props) {
-    /*  const queueItemArr = props.order.map((order, index) => <QueueItemOrder key={index} order={order} />); */
-    return (
-      <div className="queue-item">
-        <h3>#{props.id}</h3>
-        {/*    <div>{queueItemArr}</div> */}
-        <div className="dateTime">
-          <GetTime starttime={props.startTime} />
-        </div>
-        {props.order.map((order, index) => (
-          <li key={index}>{order}</li>
-        ))}
-      </div>
-    );
-  }
-  function ServingList(props) {
-    const servingArr = props.serving.map((serving, index) => <ServingItem key={index} {...serving} />);
-    return <section className="queue-list">{servingArr}</section>;
-  }
-
-  function ServingItem(props) {
-    /*  const queueItemArr = props.order.map((order, index) => <QueueItemOrder key={index} order={order} />); */
-    return (
-      <div className="serving-item">
-        <h3>#{props.id}</h3>
-        {/*    <div>{queueItemArr}</div> */}
-
-        {props.startTime && <GetTime starttime={props.startTime} />}
-
-        {props.order.map((order, index) => (
-          <li key={index}>{order}</li>
-        ))}
-      </div>
-    );
-  }
 
   return (
     <div className="App">
@@ -214,22 +49,6 @@ function App() {
           {data.storage && <StorageList storages={data.storage} />}
         </div>
       </main>
-    </div>
-  );
-}
-function GetTime(props) {
-  const unixtime = props.starttime;
-  const formatteddate = new Date(unixtime).toLocaleDateString("en-GB");
-
-  var date = new Date(unixtime);
-  var hour = date.getHours();
-  var min = date.getMinutes();
-  var sec = date.getSeconds();
-  var time = hour + ":" + min + ":" + sec;
-  return (
-    <div className="dateTime">
-      <p>{formatteddate}</p>
-      <p>{time}</p>
     </div>
   );
 }
