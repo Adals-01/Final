@@ -9,7 +9,7 @@ export default function GetTime(props) {
   var time = hour + ":" + min + ":" + sec;
   return (
     <div className="dateTime">
-      <p>{formatteddate}</p>
+      <p>{formatteddate.slice(0, 6) + formatteddate.slice(8, 10)}</p>
       <p>{time}</p>
     </div>
   );

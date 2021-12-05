@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.scss";
-// import keg from "./assets/keg-icon.svg";
-import logo from "./assets/foobar-logo.svg";
-import Overview from "./components/Overview";
-import StorageList from "./components/StorageList";
-import TapList from "./components/TapList";
-import QueueList from "./components/QueueList";
-import ServingList from "./components/ServingList";
+import Dashboard from "./components/Dashboard";
+import Homepage from "./components/Order/home";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   const [data, setItems] = useState([]);
@@ -30,8 +26,7 @@ function App() {
 
   return (
     <div className="App">
-      <main>
-        <aside>
+      {/* <aside>
           <h2>Taps</h2>
           {data.taps && <TapList taps={data.taps} />}
         </aside>
@@ -47,8 +42,13 @@ function App() {
           </div>
           <h2>Storage</h2>
           {data.storage && <StorageList storages={data.storage} />}
-        </div>
-      </main>
+        </div> */}
+      <Router>
+        <Routes>
+          <Route path="/dashboard" element={<Dashboard data={data} />}></Route>
+          <Route path="/home" element={<Homepage data={data} />}></Route>
+        </Routes>
+      </Router>
     </div>
   );
 }
