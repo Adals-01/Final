@@ -29,7 +29,6 @@ function getImageByKey(key, i) {
 export default function TapItem(props) {
   const beer = props.beer;
   let beerimg = beer.replace(/\s+/g, "").toLowerCase();
-  console.log(beerimg);
   return (
     <div className="tap-item">
       <img className="beer-label" src={getImageByKey(beerimg)} alt={beerimg} />
