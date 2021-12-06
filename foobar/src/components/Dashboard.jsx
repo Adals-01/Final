@@ -4,6 +4,7 @@ import StorageList from "../components/StorageList";
 import TapList from "../components/TapList";
 import QueueList from "../components/QueueList";
 import ServingList from "../components/ServingList";
+import ServingBartender from "./ServingBartender";
 
 export default function Dashboard(props) {
   return (
@@ -19,7 +20,7 @@ export default function Dashboard(props) {
         </div>
         <h2>Orders</h2>
         <div className="serving-and-queue">
-          {props.data.serving && <ServingList serving={props.data.serving} />}
+          {props.data.serving && <ServingList serving={props.data.serving}/>}
           {props.data.queue && <QueueList queue={props.data.queue} />}
         </div>
         <h2>Storage</h2>
