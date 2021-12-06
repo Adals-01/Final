@@ -1,4 +1,6 @@
+import Bartender from "./Bartender";
 import GetTime from "./GetTime";
+
 export default function ServingItem(props) {
   /*  const queueItemArr = props.order.map((order, index) => <QueueItemOrder key={index} order={order} />); */
   const order = props.order; 
@@ -21,9 +23,7 @@ export default function ServingItem(props) {
     <div className="serving-item">
       <h3>#{props.id}</h3>
       {/*    <div>{queueItemArr}</div> */}
-  
       {props.startTime && <GetTime starttime={props.startTime} />}
-
     {beers}
     </div>
   );
