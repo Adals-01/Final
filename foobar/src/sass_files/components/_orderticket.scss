@@ -12,9 +12,19 @@
   align-items: center;
   text-align: center;
 
-  li {
-    text-align: left;
+  .beer-item {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 10ch;
   }
+
+  li {
+    display: flex;
+    justify-content: space-between;
+  }
+
   h3 {
     margin: 0;
   }
@@ -30,10 +40,27 @@
     padding: 0.1rem 0rem 0.2rem 0rem;
     margin: 0;
   }
+
+  .beer-count {
+    text-align: right;
+  }
 }
 
 .serving-item {
   h3 {
     color: mediumaquamarine;
+  }
+}
+
+.fadeIn {
+  animation: fadeInAnimation 1s linear;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

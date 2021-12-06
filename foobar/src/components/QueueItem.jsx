@@ -17,12 +17,12 @@ export default function QueueItem(props) {
   order.forEach(function(x) { counts[x] = (counts[x] || 0)+1; });
 
   let beers = nodublicates.map((item, index) =>
-    <li key={index} order={props.order}>{item}<span className="beer-count"> x {counts[item]}</span></li> 
+    <li key={index} order={props.order}><div className="beer-item">{item}</div><span className="beer-count"> x {counts[item]}</span></li> 
     );
 
 
   return (
-    <div className="queue-item">
+    <div className="queue-item ">
       <h3>#{props.id}</h3>
   
         <GetTime starttime={props.startTime} />

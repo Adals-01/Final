@@ -18,11 +18,11 @@ aside {
 
 .tap-list {
   display: grid;
+  gap: 4vh;
   border-radius: 20px;
 }
 
 .tap-item {
-  padding-top: 2vh;
   padding-left: 2vw;
   display: flex;
 }

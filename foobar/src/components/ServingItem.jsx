@@ -1,4 +1,5 @@
 import GetTime from "./GetTime";
+
 export default function ServingItem(props) {
   /*  const queueItemArr = props.order.map((order, index) => <QueueItemOrder key={index} order={order} />); */
   const order = props.order; 
@@ -13,9 +14,13 @@ export default function ServingItem(props) {
   const  counts = {};
   order.forEach(function(x) { counts[x] = (counts[x] || 0)+1; });
 
+
+
   let beers = nodublicates.map((item, index) =>
-    <li key={index} order={props.order}>{item}<span className="beer-count"> x {counts[item]}</span></li> 
+    <li key={index} order={props.order}><div className="beer-item">{item}</div><span className="beer-count"> x {counts[item]}</span></li> 
     );
+
+
 
   return (
     <div className="serving-item">
@@ -24,7 +29,7 @@ export default function ServingItem(props) {
   
       {props.startTime && <GetTime starttime={props.startTime} />}
 
-    {beers}
+   {beers}
     </div>
   );
 }
