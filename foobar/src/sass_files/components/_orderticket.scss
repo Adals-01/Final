@@ -44,6 +44,18 @@
   .beer-count {
     text-align: right;
   }
+
+  .bartender-img-container {
+    position: relative;
+  }
+
+  .bartender-img {
+    position: absolute;
+    height: 3rem;
+    border-radius: 1.5rem;
+    top: -1.6rem;
+    right: -1.6rem;
+  }
 }
 
 .serving-item {
@@ -54,13 +66,4 @@
 
 .fadeIn {
   animation: fadeInAnimation 1s linear;
-}
-
-@keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }

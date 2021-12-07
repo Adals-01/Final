@@ -1,4 +1,20 @@
 import GetTime from "./GetTime";
+import Peter from "../assets/Peter.jpg";
+import Dannie from "../assets/Dannie.jpg";
+import Klaus from "../assets/Klaus.jpg";
+import Jonas from "../assets/Jonas.jpg";
+
+const images = {
+ Peter, 
+ Klaus, 
+ Dannie, 
+ Jonas
+};
+
+function getImageByKey(key, i) {
+  return images[key];
+}
+
 
 export default function ServingItem(props) {
   /*  const queueItemArr = props.order.map((order, index) => <QueueItemOrder key={index} order={order} />); */
@@ -33,7 +49,10 @@ export default function ServingItem(props) {
       <div>
         {(() => {
           if (customerId === props.id) {
-            return <p>{bartender}</p>;
+            return (<div className = "bartender-img-container">
+              <p>{bartender}</p>
+            <img className="bartender-img" src={getImageByKey(bartender)} alt={bartender} />
+            </div>)
           }
         })()}
       </div>
