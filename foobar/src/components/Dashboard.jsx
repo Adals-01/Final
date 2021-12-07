@@ -19,7 +19,7 @@ export default function Dashboard(props) {
         </div>
         <h2>Orders</h2>
         <div className="serving-and-queue">
-          {props.data.serving && <ServingList serving={props.data.serving} />}
+          {props.data.serving && <ServingList serving={props.data.serving} bartenders={props.data.bartenders} />}
           {props.data.queue && <QueueList queue={props.data.queue} />}
         </div>
         <h2>Storage</h2>
