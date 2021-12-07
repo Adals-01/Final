@@ -25,13 +25,10 @@ export default function ServingItem(props) {
 
   //bartenders
   const bartendersArr = props.bartenders.map((bartender, index) => <BartenderId key={index} {...bartender} id={props.id} bartenders={props.bartenders} />);
-  console.log(bartendersArr);
-  console.log(bartendersArr[1].props.name);
+
   function BartenderId(props) {
     const customerId = props.servingCustomer;
     const bartender = props.name;
-    console.log(customerId);
-    console.log("customer id" + customerId);
     return (
       <div>
         {(() => {
@@ -46,10 +43,7 @@ export default function ServingItem(props) {
     <div className="serving-item">
       <div>{bartendersArr}</div>
       <h3>#{props.id}</h3>
-      {/*    <div>{queueItemArr}</div> */}
-
       {props.startTime && <GetTime starttime={props.startTime} />}
-
       {beers}
     </div>
   );

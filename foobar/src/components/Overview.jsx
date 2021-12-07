@@ -2,7 +2,7 @@ export default function Overview(props) {
   const unixtime = props.data.timestamp;
   var date = new Date(unixtime);
   const hour = date.getHours();
-  console.log(hour);
+
   return (
     <section className="overview">
       <h1>
@@ -36,13 +36,13 @@ export default function Overview(props) {
   );
 }
 
-function MorningGreeting(props) {
+function MorningGreeting() {
   return "Good Morning";
 }
 
-function AfternoonGreeting(props) {
+function AfternoonGreeting() {
   return "Good Afternoon";
 }
-function EveningGreeting(props) {
+function EveningGreeting() {
   return "Good Evening";
 }

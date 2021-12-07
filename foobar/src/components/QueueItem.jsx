@@ -27,12 +27,6 @@ export default function QueueItem(props) {
 
   return (
     <div className="queue-item ">
-      {/* {(() => {
-        if ({ bartendersArr }.includes) {
-          return <p>{bartendersArr.props.name}</p>;
-        }
-      })()} */}
-
       <h3>#{props.id}</h3>
       <GetTime starttime={props.startTime} />
       {beers}
