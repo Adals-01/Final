@@ -29,13 +29,14 @@ export default function ServingItem(props) {
   console.log(bartendersArr[1].props.name);
   function BartenderId(props) {
     const customerId = props.servingCustomer;
+    const bartender = props.name;
     console.log(customerId);
     console.log("customer id" + customerId);
     return (
       <div>
         {(() => {
           if (customerId === props.id) {
-            return <p>{bartendersArr.props.name}</p>;
+            return <p>{bartender}</p>;
           }
         })()}
       </div>
