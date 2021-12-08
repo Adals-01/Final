@@ -22,6 +22,7 @@ const images = {
   steampunk,
 };
 
+
 function getImageByKey(key, i) {
   return images[key];
 }
@@ -31,26 +32,27 @@ export default function TapItem(props) {
   let beerimg = beer.replace(/\s+/g, "").toLowerCase();
   return (
     <div className="tap-item">
+      <h2>{props.id + 1}</h2>
       <img className="beer-label" src={getImageByKey(beerimg)} alt={beerimg} />
       <h3>{/* {props.beer} */}</h3>
       <div className="tap-levels-container">
-        <p
+        <div className="bar-fluid"
           style={{
             height: "1rem",
-            width: `calc(${props.level}vw/2500*8)`,
+            width: `calc(${props.level}vw/2500*7)`,
             backgroundColor: "white",
             border: "1px solid white",
             borderRadius: "0.5rem",
           }}
-        ></p>
-        <p
+        ></div>
+        <div className="bar-container"
           style={{
             height: "1rem",
-            width: `calc(${props.capacity}vw/2500*8)`,
+            width: `calc(${props.capacity}vw/2500*7)`,
             border: "1px solid white",
             borderRadius: "0.5rem",
           }}
-        ></p>
+        ></div>
       </div>
     </div>
   );

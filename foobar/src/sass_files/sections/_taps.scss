@@ -18,19 +18,20 @@ aside {
 
 .tap-list {
   display: grid;
-  gap: 4vh;
   border-radius: 20px;
 }
 
 .tap-item {
-  padding-left: 2vw;
+  max-height: calc(95vh / 7);
   display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .tap-levels-container {
   position: relative;
-  margin-left: 2vw;
-  p {
+
+  .bar-fluid {
     position: absolute;
   }
 }
