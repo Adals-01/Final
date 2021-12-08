@@ -4,7 +4,7 @@ import Dannie from "../assets/Dannie.jpg";
 import Klaus from "../assets/Klaus.jpg";
 import Jonas from "../assets/Jonas.jpg";
 import React, { forwardRef } from 'react';
-import FlipMove from 'react-flip-move';
+
 
 
 const images = {
@@ -54,7 +54,7 @@ function getImageByKey(key, i) {
         {(() => {
           if (customerId === props.id) {
             return (<div className = "bartender-img-container">
-              <p>{bartender}</p>
+              {/* <p>{bartender}</p> */}
             <img className="bartender-img" src={getImageByKey(bartender)} alt={bartender} />
             </div>)
           }
