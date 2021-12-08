@@ -3,7 +3,7 @@ import FlipMove from 'react-flip-move';
 
 export default function ServingList (props) {
   const servingArr = props.serving.map((serving, index) => <ServingItem key={index} {...serving} bartenders={props.bartenders}/>);
-  return <FlipMove 
+  return <FlipMove style={{ overflowAnchor: 'none' }}
   maintainContainerHeight="true"
   staggerDelayBy={150}
   appearAnimation="fade"

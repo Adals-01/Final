@@ -7,8 +7,8 @@
 }
 
 .queue-list {
+  will-change: transform, opacity;
   display: inline-flex;
-  grid-column-gap: 2rem;
 }
 
 .example-appear {
