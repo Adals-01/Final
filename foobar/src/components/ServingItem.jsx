@@ -3,6 +3,9 @@ import Peter from "../assets/Peter.jpg";
 import Dannie from "../assets/Dannie.jpg";
 import Klaus from "../assets/Klaus.jpg";
 import Jonas from "../assets/Jonas.jpg";
+import React, { forwardRef } from 'react';
+import FlipMove from 'react-flip-move';
+
 
 const images = {
  Peter, 
@@ -16,7 +19,8 @@ function getImageByKey(key, i) {
 }
 
 
-export default function ServingItem(props) {
+
+  const ServingItem = forwardRef((props, ref) => {
   /*  const queueItemArr = props.order.map((order, index) => <QueueItemOrder key={index} order={order} />); */
   const order = props.order;
 
@@ -59,11 +63,14 @@ export default function ServingItem(props) {
     );
   }
   return (
-    <div className="serving-item">
+    <div ref={ref} className="serving-item">
       <div>{bartendersArr}</div>
       <h3>#{props.id}</h3>
       {props.startTime && <GetTime starttime={props.startTime} />}
       {beers}
     </div>
+   
   );
-}
+})
+
+export default ServingItem
