@@ -42,3 +42,9 @@ button {
   font-family: mundial-hair;
   font-size: 1em;
 }
+
+@media screen and (max-width: 992px) {
+  h1 {
+    font-size: 1.6em;
+  }
+}
