@@ -1,6 +1,9 @@
 import GetTime from "./GetTime";
+import React, { forwardRef } from 'react';
 
-export default function QueueItem(props) {
+
+
+const QueueItem = forwardRef((props, ref) => {
   /*   const queueItemArr = props.order.map((order, index) => <li key={index} order={order}></li>);
   console.log(props.order);  */
 
@@ -26,10 +29,12 @@ export default function QueueItem(props) {
   ));
 
   return (
-    <div className="queue-item ">
+    <div ref={ref} className="queue-item ">
       <h3>#{props.id}</h3>
       <GetTime starttime={props.startTime} />
       {beers}
     </div>
   );
 }
+)
+export default QueueItem 
