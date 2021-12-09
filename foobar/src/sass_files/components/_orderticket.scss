@@ -19,7 +19,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 9ch;
+    max-width: 8ch;
   }
 
   li {
@@ -35,8 +35,8 @@
     margin: 0.5rem 0.1rem;
     display: flex;
     justify-content: space-between;
-    border-top: 1px dashed black;
-    border-bottom: 1px dashed black;
+    border-top: 1px dashed colors.$black;
+    border-bottom: 1px dashed colors.$black;
   }
   p {
     padding: 0.1rem 0rem 0.2rem 0rem;
@@ -57,12 +57,42 @@
     border-radius: 1.5rem;
     top: -1.6rem;
     right: -1.6rem;
+    border: 2px solid colors.$white;
   }
 }
 
 .serving-item {
   h3 {
-    color: mediumaquamarine;
+    color: black;
+    -webkit-animation-name: flash;
+    animation-name: flash;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+}
+
+@-webkit-keyframes flash {
+  from,
+  50%,
+  to {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+@keyframes flash {
+  from,
+  50%,
+  to {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
   }
 }
 
