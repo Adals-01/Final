@@ -32,7 +32,8 @@ h3 {
 }
 
 //reciept date and time, overview small text
-p {
+p,
+h3:before {
   font-family: mundial-hair;
   font-size: 0.8em;
 }

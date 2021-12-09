@@ -29,6 +29,7 @@
 
   h3 {
     margin: 0;
+    padding: 0.2rem 0rem;
   }
   .dateTime {
     padding: 0;
@@ -62,7 +63,16 @@
 }
 
 .serving-item {
-  h3 {
+  position: relative;
+  h3:before {
+    font-weight: bold;
+    position: absolute;
+    top: 0.2em;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: 0.6em;
+    content: "SERVING";
     color: black;
     -webkit-animation-name: flash;
     animation-name: flash;
