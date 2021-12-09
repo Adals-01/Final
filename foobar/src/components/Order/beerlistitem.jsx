@@ -1,3 +1,5 @@
+import React, { useState, useEffect } from "react";
+
 import elhefe from "../../assets/elhefe.png";
 import fairytaleale from "../../assets/fairytaleale.png";
 import githop from "../../assets/githop.png";
@@ -21,19 +23,27 @@ const images = {
   sleighride,
   steampunk,
 };
+
 function getImageByKey(key) {
   return images[key];
+}
+function addToBasket(product) {
+  setBasket(function (oldBasket) {
+    const nextState = oldBasket.concat(product);
+    return nextState;
+  });
 }
 
 export default function Beerlistitem(props) {
   const beer = props.name;
   const alc = props.alc;
-  console.log(props);
-  console.log(alc);
+
   let beerimg = beer.replace(/\s+/g, "").toLowerCase();
   let price = alc.toString().split(".").join("");
 
-  console.log(price);
+  const initialCount = 0;
+  const [count, setCount] = useState(initialCount);
+  const [basket, setBasket] = useState([]);
   return (
     <div className="beerListItem">
       <div className="leftSide">
@@ -50,6 +60,29 @@ export default function Beerlistitem(props) {
             return <p>{price} DKK</p>;
           }
         })()}
+        <div className="addContainer">
+          <button
+            onClick={(e) => {
+              if (count > 0) {
+                setCount((prevCount) => prevCount - 1);
+              }
+            }}
+          >
+            -
+          </button>
+          <p>{count}</p>
+
+          <button
+            onClick={(e) => {
+              setCount((prevCount) => prevCount + 1);
+              props.addToBasket({
+                price: props.price,
+              });
+            }}
+          >
+            +
+          </button>
+        </div>
       </div>
     </div>
   );
