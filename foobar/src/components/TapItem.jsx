@@ -39,18 +39,24 @@ export default function TapItem(props) {
         <div className="bar-fluid"
           style={{
             height: "1rem",
-            width: `calc(${props.level}vw/2500*7)`,
+            width: `calc(${props.level}rem/2500*7)`,
             backgroundColor: "white",
             border: "1px solid white",
             borderRadius: "0.5rem",
+            "@media (maxWidth: 992px)": {
+              width: `calc(${props.capacity}rem/2500*14)`,
+            }
           }}
         ></div>
         <div className="bar-container"
           style={{
             height: "1rem",
-            width: `calc(${props.capacity}vw/2500*7)`,
+            width: `calc(${props.capacity}rem/2500*7)`,
             border: "1px solid white",
             borderRadius: "0.5rem",
+            "@media (maxWidth: 992px)": {
+              width: `calc(${props.capacity}rem/2500*14)`,
+            }
           }}
         ></div>
       </div>

@@ -35,3 +35,18 @@ aside {
     position: absolute;
   }
 }
+
+@media screen and (max-width: 992px) {
+  .tap-item {
+    max-height: 4rem;
+    justify-content: center;
+  }
+
+  .tap-item > * {
+    margin-left: 8vw;
+  }
+
+  .beer-label {
+    width: 2.5rem;
+  }
+}

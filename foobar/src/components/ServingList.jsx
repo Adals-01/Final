@@ -5,7 +5,6 @@ export default function ServingList (props) {
   const servingArr = props.serving.map((serving, index) => <ServingItem key={index} {...serving} bartenders={props.bartenders}/>);
   return <FlipMove style={{ overflowAnchor: 'none' }}
   maintainContainerHeight="true"
-  staggerDelayBy={150}
   appearAnimation="fade"
    enterAnimation="fade"
     leaveAnimation="fade"
