@@ -1,7 +1,7 @@
 import Beerlistitem from "./beerlistitem";
 
-export default function Beerlist(props) {
-  const beerArr = props.data.map((beerlist, index) => <Beerlistitem key={index} {...beerlist} />);
+ export default function Beerlist(props) {
+  const beerArr = props.data.map((product, index) => <Beerlistitem addToBasket={props.addToBasket} {...product} key={index} />);
   return (
     <div className="Home">
       <main>

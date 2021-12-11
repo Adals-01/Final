@@ -4,6 +4,7 @@ import Dashboard from "./components/Dashboard";
 import Homepage from "./components/Order/home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Beerlist from "./components/Order/beerlist";
+import Mainpage from "./components/Order/mainpage";
 
 function App() {
   const [data, setItems] = useState([]);
@@ -57,7 +58,8 @@ function App() {
         <Routes>
           <Route path="/dashboard" element={<Dashboard data={data} />}></Route>
           <Route path="/home" element={<Homepage data={data} />}></Route>
-          <Route path="/beerlist" element={<Beerlist data={beerdata} />}></Route>
+          <Route path="/mainpage" element={<Mainpage data={beerdata} />}></Route>
+         {/*  <Route path="/beerlist" element={<Beerlist data={beerdata} />}></Route> */}
         </Routes>
       </Router>
     </div>

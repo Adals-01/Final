@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import elhefe from "../../assets/elhefe.png";
 import fairytaleale from "../../assets/fairytaleale.png";
@@ -27,12 +27,7 @@ const images = {
 function getImageByKey(key) {
   return images[key];
 }
-function addToBasket(product) {
-  setBasket(function (oldBasket) {
-    const nextState = oldBasket.concat(product);
-    return nextState;
-  });
-}
+
 
 export default function Beerlistitem(props) {
   const beer = props.name;
@@ -43,7 +38,17 @@ export default function Beerlistitem(props) {
 
   const initialCount = 0;
   const [count, setCount] = useState(initialCount);
-  const [basket, setBasket] = useState([]);
+
+  function plus() {
+    setCount((prevCount) => prevCount + 1);
+   props.addToBasket({
+      price: props.alc,
+    }); 
+  }
+  function minus() {
+    if (count > 0) setCount((prevCount) => prevCount - 1);
+  }
+
   return (
     <div className="beerListItem">
       <div className="leftSide">
@@ -64,29 +69,9 @@ export default function Beerlistitem(props) {
           })()}
         </div>
         <div className="addContainer">
-          <button
-            className="circleButton"
-            onClick={(e) => {
-              if (count > 0) {
-                setCount((prevCount) => prevCount - 1);
-              }
-            }}
-          >
-            -
-          </button>
-          <p>{count}</p>
-
-          <button
-            className="circleButton"
-            onClick={(e) => {
-              setCount((prevCount) => prevCount + 1);
-              props.addToBasket({
-                price: props.price,
-              });
-            }}
-          >
-            +
-          </button>
+        <button className="circleButton" onClick={minus}>-</button>
+        <div className="plus-minus-btn">{count}</div>
+        <button className="circleButton" onClick={plus}>+</button>
         </div>
       </div>
     </div>
