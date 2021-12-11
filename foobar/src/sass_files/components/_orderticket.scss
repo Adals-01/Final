@@ -19,7 +19,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 9ch;
+    max-width: 8ch;
   }
 
   li {
@@ -29,14 +29,15 @@
 
   h3 {
     margin: 0;
+    padding: 0.2rem 0rem;
   }
   .dateTime {
     padding: 0;
     margin: 0.5rem 0.1rem;
     display: flex;
     justify-content: space-between;
-    border-top: 1px dashed black;
-    border-bottom: 1px dashed black;
+    border-top: 1px dashed colors.$black;
+    border-bottom: 1px dashed colors.$black;
   }
   p {
     padding: 0.1rem 0rem 0.2rem 0rem;
@@ -57,12 +58,51 @@
     border-radius: 1.5rem;
     top: -1.6rem;
     right: -1.6rem;
+    border: 2px solid colors.$white;
   }
 }
 
 .serving-item {
-  h3 {
-    color: mediumaquamarine;
+  position: relative;
+  h3:before {
+    font-weight: bold;
+    position: absolute;
+    top: 0.2em;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: 0.6em;
+    content: "SERVING";
+    color: black;
+    -webkit-animation-name: flash;
+    animation-name: flash;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+  }
+}
+
+@-webkit-keyframes flash {
+  from,
+  50%,
+  to {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+@keyframes flash {
+  from,
+  50%,
+  to {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
   }
 }
 

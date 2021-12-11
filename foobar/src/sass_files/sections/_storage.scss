@@ -45,3 +45,28 @@
   z-index: 99;
   color: colors.$black;
 }
+
+@media screen and (max-width: 992px) {
+  .storage-list {
+    flex-flow: row wrap;
+    display: flex;
+  }
+
+  .storage-item {
+    flex-basis: 20%;
+    width: calc(65vw / 5);
+    margin-bottom: 3rem;
+  }
+
+  .slanted-text-container {
+    h3 {
+      transform: translate(-50%, -50%);
+      transform: rotate(-10deg);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 7ch;
+      /*  text-decoration: underline; */
+    }
+  }
+}
