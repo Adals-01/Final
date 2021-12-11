@@ -1,6 +1,7 @@
 @use "../base/colors.scss";
 
 .beerListItem {
+  position: relative;
   border: 1px solid white;
   border-radius: 1rem;
   margin-bottom: 1.2rem;
@@ -31,9 +32,9 @@
   //   align-items: center;
   // }
   .addContainer {
-    position: relative;
-    left: 26rem;
-    bottom: 3.8rem;
+    position: absolute;
+    right: 1.6rem;
+    bottom: 1.6rem;
     display: flex;
     align-items: flex-end;
     gap: 1rem;

@@ -1,33 +1,5 @@
 import React, { useState } from "react";
-
-import elhefe from "../../assets/elhefe.png";
-import fairytaleale from "../../assets/fairytaleale.png";
-import githop from "../../assets/githop.png";
-import hollabacklager from "../../assets/hollaback.png";
-import hoppilyeverafter from "../../assets/hoppilyeverafter.png";
-import mowintime from "../../assets/mowintime.png";
-import row26 from "../../assets/row26.png";
-import ruinedchildhood from "../../assets/ruinedchildhood.png";
-import sleighride from "../../assets/sleighride.png";
-import steampunk from "../../assets/steampunk.png";
-
-const images = {
-  elhefe,
-  fairytaleale,
-  githop,
-  hollabacklager,
-  hoppilyeverafter,
-  mowintime,
-  row26,
-  ruinedchildhood,
-  sleighride,
-  steampunk,
-};
-
-function getImageByKey(key) {
-  return images[key];
-}
-
+import getImageByKey from "./getImageByKey";
 
 export default function Beerlistitem(props) {
   const beer = props.name;
@@ -42,7 +14,9 @@ export default function Beerlistitem(props) {
   function plus() {
     setCount((prevCount) => prevCount + 1);
    props.addToBasket({
+      count: count + 1,
       price: props.alc,
+      name: props.name,
     }); 
   }
   function minus() {

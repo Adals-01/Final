@@ -1,6 +1,6 @@
 import Beerlist from "./beerlist";
 import Basket from "./basket";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 export default function Mainpage(props) {
     const [products, setProducts] = useState([]);
@@ -12,6 +12,7 @@ function addToBasket(product) {
       return nextState;
     });
   }
+
 
     return (
       <main>
