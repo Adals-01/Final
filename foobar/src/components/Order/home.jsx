@@ -3,7 +3,9 @@ import leaf1 from "../../assets/illustrations/leaf1.svg";
 import leaf2 from "../../assets/illustrations/leaf2.svg";
 import straw1 from "../../assets/illustrations/straw1.svg";
 import straw2 from "../../assets/illustrations/straw2.svg";
-export default function Homepage(props) {
+// import Beerlist from "../Order/beerlist";
+
+export default function Homepage(data) {
   return (
     <div className="Home">
       <img className="left" src={leaf1} alt={"hop leaf"} />
@@ -15,11 +17,6 @@ export default function Homepage(props) {
       </div>
       <img className="bottom right" src={leaf2} alt={"hop leaf"} />
       <img className="bottom left" src={straw2} alt={"straw leaf"} />
-      {/* <Router>
-        <Routes>
-          <Route path="/beerlist" element={<Beerlist data={data} />}></Route>
-        </Routes>
-      </Router> */}
     </div>
   );
 }

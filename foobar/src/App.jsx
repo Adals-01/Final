@@ -3,9 +3,11 @@ import "./App.scss";
 import Dashboard from "./components/Dashboard";
 import Homepage from "./components/Order/home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Beerlist from "./components/Order/beerlist";
 
 function App() {
   const [data, setItems] = useState([]);
+  const [beerdata, setBeers] = useState([]);
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -21,6 +23,14 @@ function App() {
       fetchItems();
     }, 5000);
     fetchItems();
+
+    fetch("https://foobar-team10.herokuapp.com/beertypes")
+      .then((res) => res.json())
+      .then((beerdata) => {
+        setBeers(beerdata);
+        fetchItems(); // <-- (2) invoke on mount
+      });
+
     return () => clearInterval(id);
   }, []);
 
@@ -47,6 +57,7 @@ function App() {
         <Routes>
           <Route path="/dashboard" element={<Dashboard data={data} />}></Route>
           <Route path="/home" element={<Homepage data={data} />}></Route>
+          <Route path="/beerlist" element={<Beerlist data={beerdata} />}></Route>
         </Routes>
       </Router>
     </div>
