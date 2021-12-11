@@ -1,3 +1,5 @@
+@use "../base/colors.scss";
+
 .beerListItem {
   border: 1px solid white;
   border-radius: 1rem;
@@ -5,7 +7,6 @@
   display: flex;
   gap: 1rem;
   align-items: center;
-  padding-bottom: 0.6rem;
   h3 {
     font-weight: 100;
     margin-bottom: 0;
@@ -17,5 +18,30 @@
   p {
     margin: 0;
     padding-bottom: 0.4rem;
+    white-space: wrap;
+    max-width: 45ch;
+  }
+  .rightSide {
+    max-height: 10rem;
+  }
+  // .grid {
+  //   display: grid;
+  //   grid-template-columns: 4fr 1fr;
+  //   justify-content: center;
+  //   align-items: center;
+  // }
+  .addContainer {
+    position: relative;
+    left: 26rem;
+    bottom: 3.8rem;
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+  }
+  .circleButton {
+    border-radius: 5rem;
+    padding: 0rem 0.6rem;
+    background-color: colors.$white;
+    color: colors.$black;
   }
 }

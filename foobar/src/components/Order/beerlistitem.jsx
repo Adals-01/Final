@@ -52,16 +52,20 @@ export default function Beerlistitem(props) {
       <div className="rightSide">
         <h3>{props.name}</h3>
         <p>{props.description.overallImpression}</p>
-        <p>{props.alc}% alc</p>
-        {(() => {
-          if (price.length === 1) {
-            return <p>{price}0 DKK</p>;
-          } else {
-            return <p>{price} DKK</p>;
-          }
-        })()}
+
+        <div>
+          <p>{props.alc}% alc</p>
+          {(() => {
+            if (price.length === 1) {
+              return <p>{price}0 DKK</p>;
+            } else {
+              return <p>{price} DKK</p>;
+            }
+          })()}
+        </div>
         <div className="addContainer">
           <button
+            className="circleButton"
             onClick={(e) => {
               if (count > 0) {
                 setCount((prevCount) => prevCount - 1);
@@ -73,6 +77,7 @@ export default function Beerlistitem(props) {
           <p>{count}</p>
 
           <button
+            className="circleButton"
             onClick={(e) => {
               setCount((prevCount) => prevCount + 1);
               props.addToBasket({
