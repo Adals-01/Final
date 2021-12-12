@@ -12,12 +12,19 @@ function addToBasket(product) {
       return nextState;
     });
   }
+function removeFromBasket(product) {
+    console.log("remove")
+            setBasket(oldBasket => oldBasket.filter((_, i) => i !== product));
+        
+        // remove item
+  }
 
+  
 
     return (
       <main>
-        <Beerlist  addToBasket={addToBasket} products={products} data={props.data}/>
-        <Basket MyBasket={basket} />
+        <Beerlist  addToBasket={addToBasket} removeFromBasket={removeFromBasket} products={products} data={props.data}/>
+        <Basket addToBasket={addToBasket} removeFromBasket={removeFromBasket} products={products} MyBasket={basket}/>
       </main>
     );
   }

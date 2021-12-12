@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+
 import getImageByKey from "./getImageByKey";
+import PlusMinus from "./plusminus";
 
 export default function Beerlistitem(props) {
   const beer = props.name;
-  const alc = props.alc;
-
+  
+/* 
   let beerimg = beer.replace(/\s+/g, "").toLowerCase();
   let price = alc.toString().split(".").join("");
 
@@ -21,8 +22,9 @@ export default function Beerlistitem(props) {
   }
   function minus() {
     if (count > 0) setCount((prevCount) => prevCount - 1);
-  }
-
+  }  
+ */
+  let beerimg = beer.replace(/\s+/g, "").toLowerCase();
   return (
     <div className="beerListItem">
       <div className="leftSide">
@@ -31,22 +33,7 @@ export default function Beerlistitem(props) {
       <div className="rightSide">
         <h3>{props.name}</h3>
         <p>{props.description.overallImpression}</p>
-
-        <div>
-          <p>{props.alc}% alc</p>
-          {(() => {
-            if (price.length === 1) {
-              return <p>{price}0 DKK</p>;
-            } else {
-              return <p>{price} DKK</p>;
-            }
-          })()}
-        </div>
-        <div className="addContainer">
-        <button className="circleButton" onClick={minus}>-</button>
-        <div className="plus-minus-btn">{count}</div>
-        <button className="circleButton" onClick={plus}>+</button>
-        </div>
+      <PlusMinus {...props}/>
       </div>
     </div>
   );
