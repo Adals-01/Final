@@ -12,16 +12,22 @@ function addToBasket(product) {
       return nextState;
     });
   }
+  
 function removeFromBasket(product) {
-    console.log("remove")
-            setBasket(oldBasket => oldBasket.filter((_, i) => i !== product));
-        
-        // remove item
-  }
+    console.log("remove/add hehe")
+    setBasket(function (oldBasket) {
+        const index = oldBasket.findIndex(product => product === product);
+        const newData = [
+            ...oldBasket.slice(0, index),
+            ...oldBasket.slice(index + 1)]
+            return newData
+        })
+        }
+    
 
   
 
-    return (
+  return (
       <main>
         <Beerlist  addToBasket={addToBasket} removeFromBasket={removeFromBasket} products={products} data={props.data}/>
         <Basket addToBasket={addToBasket} removeFromBasket={removeFromBasket} products={products} MyBasket={basket}/>

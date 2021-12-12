@@ -9,7 +9,7 @@ if (!!props.alc) {
      initialCount = 0 
 } else {
      alcohol = props.price;
-     initialCount = props.countItems + 2; 
+     initialCount = props.countItems; 
      }
 
 
@@ -27,30 +27,28 @@ function plus() {
 }
 
 function minus() {
-    setCount((prevCount) => {
-      if (prevCount > 0) {
-        return prevCount - 1;
-      }
+    setCount((prevCount) => prevCount - 1); 
+ /*    if (prevCount > 0) {
+      return prevCount - 1;
+    } else {
       return 0;
-    });
-/*     props.removeFromBasket({
-      countItems: count - 1,
+    } */
+      props.removeFromBasket({
+        countItems: count - 1,
         price: alcohol,
         name: props.name,
       }); 
- */
+     
   }
 
   function CountPlusMinus() {
     if (initialCount === 0) {
-      return count
+      return count;
     }
     else {
-      return props.countItems;
+      return props.countItems ;
     }
   }
-
-
 
 return (
     <>

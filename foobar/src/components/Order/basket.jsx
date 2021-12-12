@@ -17,8 +17,8 @@ export default function Basket(props) {
     //remove duplicate objects items in MyBasket 
     let noDublicates = [...new Map(props.MyBasket.map(v => [v.name, v])).values()]
 
-    const basketItemsArr = noDublicates.map((MyBasket, index) => <BasketItem {...MyBasket}  addToBasket={props.addToBasket} key={index}/>);  
- 
+    const basketItemsArr = noDublicates.map((MyBasket, index) => <BasketItem {...MyBasket}  addToBasket={props.addToBasket} removeFromBasket={props.removeFromBasket} key={index}/>);  
+ console.log(props.MyBasket);
     return ( 
       <aside>
         <div>
