@@ -19,7 +19,7 @@ let price = alcohol.toString().split(".").join("");
 function plus() {
  setCount((prevCount) => prevCount + 1); 
  props.addToBasket({
-    countItems: count ,
+    countItems: count + 1,
     price: alcohol,
     name: props.name,
   }); 
@@ -32,7 +32,7 @@ function minus() {
       return prevCount - 1;
     } 
       props.removeFromBasket({
-        countItems: count,
+        countItems: count - 1,
         price: alcohol,
         name: props.name,
       })
@@ -64,7 +64,7 @@ function minus() {
       return count;
     }
     else {
-      return initialCount + count;
+      return props.countItems;
     }
   }
 
