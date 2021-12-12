@@ -23,9 +23,6 @@ function removeFromBasket(product) {
             return newData
         })
         }
-    
-
-  
 
   return (
       <main>

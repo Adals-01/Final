@@ -19,7 +19,7 @@ let price = alcohol.toString().split(".").join("");
 function plus() {
  setCount((prevCount) => prevCount + 1); 
  props.addToBasket({
-    countItems: count + 1,
+    countItems: count ,
     price: alcohol,
     name: props.name,
   }); 
@@ -28,25 +28,43 @@ function plus() {
 
 function minus() {
     setCount((prevCount) => prevCount - 1); 
- /*    if (prevCount > 0) {
+    if (prevCount > 0) {
       return prevCount - 1;
-    } else {
+    } 
+      props.removeFromBasket({
+        countItems: count,
+        price: alcohol,
+        name: props.name,
+      })
+      if (prevCount <= 0) 
+      return 0;  
+    
+
+     
+  }
+  
+function minus() {
+    setCount((prevCount) => {
+      if (prevCount > 0) {
+        return prevCount - 1;
+      }
       return 0;
-    } */
+    });
+    
       props.removeFromBasket({
         countItems: count - 1,
         price: alcohol,
         name: props.name,
-      }); 
-     
+      });       
   }
+
 
   function CountPlusMinus() {
     if (initialCount === 0) {
       return count;
     }
     else {
-      return props.countItems ;
+      return initialCount + count;
     }
   }
 
