@@ -14,12 +14,42 @@ export default function Basket(props) {
       return <button>Click, you know you want to</button>;
     }
 
+    function CountPlusMinus() {
+        if (initialCount === 0) {
+          return count;
+        }
+        else {
+          return props.countItems;
+        }
+      }
+    
+
     
     
     //remove duplicate objects items in MyBasket 
     let noDublicates = [...new Map(props.MyBasket.map(v => [v.name, v])).values()]
+    
 
-    const basketItemsArr = noDublicates.map((MyBasket, index) => <BasketItem {...MyBasket}  addToBasket={props.addToBasket} removeFromBasket={props.removeFromBasket} key={index}/>);  
+  /*    
+    const counts = {};
+props.MyBasket.forEach((prop) => {
+   counts[prop] = (counts[prop] || 0) + 1;
+   console.log(counts[prop]);
+});
+ */
+
+function countTypeInBasket(beername) {
+const findDuplicates= props.MyBasket.map((item) => item.name === beername);
+const counts = findDuplicates.filter(Boolean).length;;
+console.log(counts)}
+
+
+
+/* const eachItem = props.MyBasket.filter(item => item.name === item.name);
+  const counts = eachItem.length;
+  console.log(counts);
+ */
+    const basketItemsArr = noDublicates.map((MyBasket, index) => <BasketItem countTypeInBasket={countTypeInBasket} {...MyBasket} addToBasket={props.addToBasket}  removeFromBasket={props.removeFromBasket} key={index}/>);  
  console.log(props.MyBasket);
     return ( 
       <aside>

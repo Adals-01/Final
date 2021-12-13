@@ -23,8 +23,7 @@ function plus() {
     price: alcohol,
     name: props.name,
   }); 
-  
-}
+ }
 
 function minus() {
     setCount((prevCount) => prevCount - 1); 
@@ -38,9 +37,6 @@ function minus() {
       })
       if (prevCount <= 0) 
       return 0;  
-    
-
-     
   }
   
 function minus() {
@@ -60,13 +56,11 @@ function minus() {
 
 
   function CountPlusMinus() {
-    if (initialCount === 0) {
-      return count;
-    }
-    else {
-      return props.countItems;
-    }
+    setCount(props.name);
+    return <div>{hello}</div>
   }
+  
+/*   console.log(props.counts) */
 
 return (
     <>
