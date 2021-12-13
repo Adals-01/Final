@@ -24,7 +24,7 @@ if (!!props.alc) {
 
 
 const [count, setCount] = useState(initialCount);
-let price = alcohol.toString().split(".").join("");
+
 
 function plusWrapper() {
   counting();
@@ -64,14 +64,14 @@ function plusWrapper() {
 return (
     <>
     <div>
-          <p>{props.alcohol}% alc</p>
+          {/* <p>{props.alcohol}% alc</p> 
           {(() => {
             if (price.length === 1) {
               return <p>{price}0 DKK</p>;
             } else {
               return <p>{price} DKK</p>;
             }
-          })()}
+          })()} */}
         </div>
         <div className="addContainer">
         <button className="circleButton" onClick={minusWrapper}>-</button>

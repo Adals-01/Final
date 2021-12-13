@@ -47,3 +47,15 @@
     color: colors.$black;
   }
 }
+
+.bottom-cart {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid colors.$white;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 2rem;
+}

@@ -1,4 +1,5 @@
 import BasketItem from "./basketItem";
+import Checkout from "./checkout";
 
 
 export default function Basket(props) {
@@ -7,13 +8,7 @@ export default function Basket(props) {
       return previousValue + currentValue.price;
     }, initialValue);
   
-    function Button(props) {
-      if (props.sum <= 0) {
-        return <button disabled={true}>Nothing</button>;
-      }
-      return <button>Click, you know you want to</button>;
-    }
-
+   
 /*     function CountPlusMinus() {
         if (initialCount === 0) {
           return count;
@@ -48,16 +43,26 @@ props.MyBasket.forEach((prop) => {
     const basketItemsArr = noDublicates.map((MyBasket, index) => <BasketItem countTypeInBasket={props.countTypeInBasket} {...MyBasket} addToBasket={props.addToBasket}  removeFromBasket={props.removeFromBasket} key={index}/>);  
  console.log(props.MyBasket);
     return ( 
-      <div>
+      <div className="basket-wrapper">
+         <div className="progressPlacement">
+                <div className="progress-container">
+                    <div className="circle-container"><div className="circle active">1</div></div>
+                    <div className="circle-container"><div className="circle active">2</div></div>
+                    <div className="circle-container"><div className="circle active">3</div></div>
+                </div>
+            </div>
         <div>
-          <h2>Your basket</h2>
+        <Checkout MyBasket={props.MyBasket}/>
+          <h2>Here is what you have chosen:</h2>
           {basketItemsArr}
           <p>{props.MyBasket.length} items</p>
          {/*  <p>{sum} DKK</p> */}
         </div>
-        <h3>Checkout</h3>
-        <form></form>
-        <Button />
+        <div className="bottom-cart">
+       <p className="total">Total:</p>
+        <div><p>{props.MyBasket.length*sum} DKK</p></div>
+        </div>
+        <div className="button-wrapper"><button className="primary">NEXT</button></div>
         </div>
     );
   }

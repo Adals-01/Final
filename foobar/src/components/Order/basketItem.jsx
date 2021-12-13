@@ -10,9 +10,10 @@ export default function BasketItem(props) {
 return  (
     <section className="basketItem">
         <img className="beerLabel" src={getImageByKey(beerimg)} alt={beerimg} />
-    <p>{props.name}<span> x {props.count}</span></p>
+    <p>{props.name}</p>
     <p>{props.price} DKK</p>
     <PlusMinus {...props}/> 
     </section>
+    
     )
  }

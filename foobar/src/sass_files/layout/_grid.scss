@@ -1,5 +1,10 @@
 @use "../base/colors.scss";
 
+.main-orderform {
+  padding-left: 6vw;
+  padding-right: 6vw;
+}
+
 .dashboardMain {
   display: grid;
   grid-template-columns: 2fr 4fr;

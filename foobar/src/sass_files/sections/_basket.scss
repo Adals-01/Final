@@ -1,6 +1,62 @@
-.basketItem {
-  .beerLabel {
-    height: 7rem;
-    padding: 1rem;
+@use "../base/colors.scss";
+
+.basket-wrapper {
+  .basketItem {
+    .beerLabel {
+      height: 5rem;
+      width: 5rem;
+      padding: 1rem;
+    }
   }
+  .progressPlacement {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .progress-container {
+    display: flex;
+  }
+
+  .circle-container {
+    position: relative;
+  }
+  .circle {
+    text-align: center;
+    height: 1rem;
+    width: 1rem;
+    padding: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    background-color: colors.$black;
+    color: colors.$white;
+    border: 1px colors.$white solid;
+    border-radius: 2rem;
+  }
+
+  .active {
+    background-color: colors.$white;
+    color: colors.$black;
+  }
+}
+
+._hsN1w,
+.next {
+  background-color: none;
+  color: colors.$black;
+  border: 1px colors.$black solid;
+}
+.next:hover {
+  background-color: none;
+  color: colors.$black;
+  border: 1px colors.$black solid;
+}
+.prev {
+  background-color: colors.$white;
+  color: colors.$black;
+  border: 1px colors.$black solid;
+}
+
+.step {
+  color: colors.$black;
 }

@@ -22,17 +22,6 @@ function removeFromBasket(product) {
           return newData 
       })}
 
- 
-        
-/* 
-        const deleteClaim = (claim,value) => {
-          const index = claim.findIndex(element => element === value); // 1
-          const result = claim.splice(index, 1);
-          return result
-        
-        } */
-
-     
 
  function countTypeInBasket(product) {
     const findDuplicates= basket.map((item) => item.name === product);
@@ -43,8 +32,10 @@ function removeFromBasket(product) {
 
   return (
       <main>
+        <div className="main-orderform">
         <Beerlist countTypeInBasket={countTypeInBasket} addToBasket={addToBasket} removeFromBasket={removeFromBasket} products={products} data={props.data}/>
         <Basket countTypeInBasket={countTypeInBasket} addToBasket={addToBasket} removeFromBasket={removeFromBasket} products={products} MyBasket={basket}/>
+        </div>
       </main>
     );
   }

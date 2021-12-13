@@ -32,6 +32,7 @@ export default function Beerlistitem(props) {
       </div>
       <div className="rightSide">
         <h3>{props.name}</h3>
+        <p>{props.alc}% alc</p>
         <p>{props.description.overallImpression}</p>
       <PlusMinus {...props}/>
       </div>
