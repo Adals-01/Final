@@ -42,13 +42,11 @@
 
 ._hsN1w,
 .next {
-  background-color: none;
+  background-color: colors.$white;
   color: colors.$black;
   border: 1px colors.$black solid;
 }
 .next:hover {
-  background-color: none;
-  color: colors.$black;
   border: 1px colors.$black solid;
 }
 .prev {
@@ -56,7 +54,15 @@
   color: colors.$black;
   border: 1px colors.$black solid;
 }
+.prev:hover {
+  background-color: colors.$white;
+  color: colors.$black;
+  border: 1px colors.$black solid;
+}
 
 .step {
   color: colors.$black;
+  ._2kL0S {
+    background-color: colors.$black;
+  }
 }

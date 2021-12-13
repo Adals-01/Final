@@ -1,6 +1,6 @@
 import Beerlist from "./beerlist";
-import Basket from "./basket";
 import React, { useState } from "react";
+import Checkout from "./checkout";
 
 export default function Mainpage(props) {
     const [products, setProducts] = useState([]);
@@ -34,7 +34,7 @@ function removeFromBasket(product) {
       <main>
         <div className="main-orderform">
         <Beerlist countTypeInBasket={countTypeInBasket} addToBasket={addToBasket} removeFromBasket={removeFromBasket} products={products} data={props.data}/>
-        <Basket countTypeInBasket={countTypeInBasket} addToBasket={addToBasket} removeFromBasket={removeFromBasket} products={products} MyBasket={basket}/>
+        <Checkout countTypeInBasket={countTypeInBasket} addToBasket={addToBasket} removeFromBasket={removeFromBasket} products={products} MyBasket={basket}/>
         </div>
       </main>
     );
