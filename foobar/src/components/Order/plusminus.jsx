@@ -3,35 +3,54 @@ import React, { useState } from "react";
 export default function PlusMinus(props) {
 let alcohol;
 let initialCount;
+let prevCount;
+let counts = props.countTypeInBasket(props.name);
+
 
 if (!!props.alc) {
      alcohol = props.alc;
      initialCount = 0 
+     
+     
 } else {
      alcohol = props.price;
-     initialCount = props.countItems; 
+
      }
 
 
 const [count, setCount] = useState(initialCount);
 let price = alcohol.toString().split(".").join("");
 
-function plus() {
- setCount((prevCount) => prevCount + 1); 
- props.addToBasket({
-    countItems: count + 1,
-    price: alcohol,
-    name: props.name,
-  }); 
+function plusWrapper() {
+  counting();
+  counts = counting();
+  plus(counts);
  }
 
-function minus() {
+ function minusWrapper() {
+  counting()
+  counts = counting();
+  minus(counts);
+  }
+
+ function plus (counts) {
+  setCount((prevCount) => prevCount + 1); 
+  props.addToBasket({
+    itemCount: counts,
+     price: alcohol,
+     name: props.name,
+   }); 
+ }
+
+
+
+  function minus (counts) {
     setCount((prevCount) => prevCount - 1); 
     if (prevCount > 0) {
       return prevCount - 1;
     } 
       props.removeFromBasket({
-        countItems: count - 1,
+        itemCount: counts,
         price: alcohol,
         name: props.name,
       })
@@ -39,7 +58,7 @@ function minus() {
       return 0;  
   }
   
-function minus() {
+/* function minus() {
     setCount((prevCount) => {
       if (prevCount > 0) {
         return prevCount - 1;
@@ -51,16 +70,15 @@ function minus() {
         countItems: count - 1,
         price: alcohol,
         name: props.name,
-      });       
-  }
+      });  }
+ */
 
-
-  function CountPlusMinus() {
-    setCount(props.name);
-    return <div>{hello}</div>
-  }
   
-/*   console.log(props.counts) */
+  function counting() {
+    counts = props.countTypeInBasket(props.name);
+    console.log(counts);
+    return counts;
+  } 
 
 return (
     <>
@@ -75,9 +93,9 @@ return (
           })()}
         </div>
         <div className="addContainer">
-        <button className="circleButton" onClick={minus}>-</button>
-        <div className="plus-minus-btn"><CountPlusMinus/></div>
-        <button className="circleButton" onClick={plus}>+</button>
+        <button className="circleButton" onClick={minusWrapper}>-</button>
+        <div className="plus-minus-btn">{counts}</div>
+        <button className="circleButton" onClick={plusWrapper}>+</button>
         </div>
         </>
 )

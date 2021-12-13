@@ -12,7 +12,7 @@ return  (
         <img className="beerLabel" src={getImageByKey(beerimg)} alt={beerimg} />
     <p>{props.name}<span> x {props.count}</span></p>
     <p>{props.price} DKK</p>
-    <PlusMinus  {...props}/> 
+    <PlusMinus {...props}/> 
     </section>
     )
  }

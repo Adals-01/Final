@@ -14,7 +14,6 @@ function addToBasket(product) {
   }
   
 function removeFromBasket(product) {
-    console.log("remove/add hehe")
     setBasket(function (oldBasket) {
         const index = oldBasket.findIndex(product => product === product);
         const newData = [
@@ -24,10 +23,17 @@ function removeFromBasket(product) {
         })
         }
 
+ function countTypeInBasket(product) {
+    const findDuplicates= basket.map((item) => item.name === product);
+    const counts = findDuplicates.filter(Boolean).length;
+    return counts
+  }
+           
+
   return (
       <main>
-        <Beerlist  addToBasket={addToBasket} removeFromBasket={removeFromBasket} products={products} data={props.data}/>
-        <Basket addToBasket={addToBasket} removeFromBasket={removeFromBasket} products={products} MyBasket={basket}/>
+        <Beerlist countTypeInBasket={countTypeInBasket} addToBasket={addToBasket} removeFromBasket={removeFromBasket} products={products} data={props.data}/>
+        <Basket countTypeInBasket={countTypeInBasket} addToBasket={addToBasket} removeFromBasket={removeFromBasket} products={products} MyBasket={basket}/>
       </main>
     );
   }
