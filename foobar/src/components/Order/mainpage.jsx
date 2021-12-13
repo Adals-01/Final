@@ -15,13 +15,24 @@ function addToBasket(product) {
   
 function removeFromBasket(product) {
     setBasket(function (oldBasket) {
-        const index = oldBasket.findIndex(product => product === product);
+        const index = [...oldBasket.filter(product => product !== product)];
         const newData = [
-            ...oldBasket.slice(0, index),
-            ...oldBasket.slice(index + 1)]
-            return newData
-        })
-        }
+          ...oldBasket.slice(0, index),
+          ...oldBasket.slice(index + 1)]
+          return newData 
+      })}
+
+ 
+        
+/* 
+        const deleteClaim = (claim,value) => {
+          const index = claim.findIndex(element => element === value); // 1
+          const result = claim.splice(index, 1);
+          return result
+        
+        } */
+
+     
 
  function countTypeInBasket(product) {
     const findDuplicates= basket.map((item) => item.name === product);

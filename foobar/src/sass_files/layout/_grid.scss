@@ -1,34 +1,34 @@
 @use "../base/colors.scss";
 
-main {
+.dashboardMain {
   display: grid;
   grid-template-columns: 2fr 4fr;
   margin: 5vh 5vw 0rem 3vw;
   gap: 5vw;
-}
 
-.right-side > * {
-  margin: 0rem 0rem 1rem 0rem;
-}
+  .right-side > * {
+    margin: 0rem 0rem 1rem 0rem;
+  }
 
-.overview-logo {
-  display: grid;
-  grid-template-columns: 5fr 1fr;
+  .overview-logo {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+  }
 }
 
 @media screen and (max-width: 992px) {
-  main {
+  .dashboardMain {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
       "rs"
       "as";
-  }
-  .right-side {
-    grid-area: rs;
-  }
+    .right-side {
+      grid-area: rs;
+    }
 
-  aside {
-    grid-area: as;
+    aside {
+      grid-area: as;
+    }
   }
 }

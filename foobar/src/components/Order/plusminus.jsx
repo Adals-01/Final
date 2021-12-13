@@ -6,11 +6,16 @@ let initialCount;
 let prevCount;
 let counts = props.countTypeInBasket(props.name);
 
+function counting() {
+  counts = props.countTypeInBasket(props.name);
+  console.log(counts);
+  return counts;
+} 
+
 
 if (!!props.alc) {
      alcohol = props.alc;
-     initialCount = 0 
-     
+     initialCount = 0     
      
 } else {
      alcohol = props.price;
@@ -42,8 +47,6 @@ function plusWrapper() {
    }); 
  }
 
-
-
   function minus (counts) {
     setCount((prevCount) => prevCount - 1); 
     if (prevCount > 0) {
@@ -57,28 +60,6 @@ function plusWrapper() {
       if (prevCount <= 0) 
       return 0;  
   }
-  
-/* function minus() {
-    setCount((prevCount) => {
-      if (prevCount > 0) {
-        return prevCount - 1;
-      }
-      return 0;
-    });
-    
-      props.removeFromBasket({
-        countItems: count - 1,
-        price: alcohol,
-        name: props.name,
-      });  }
- */
-
-  
-  function counting() {
-    counts = props.countTypeInBasket(props.name);
-    console.log(counts);
-    return counts;
-  } 
 
 return (
     <>

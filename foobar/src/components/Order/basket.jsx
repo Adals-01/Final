@@ -48,7 +48,7 @@ props.MyBasket.forEach((prop) => {
     const basketItemsArr = noDublicates.map((MyBasket, index) => <BasketItem countTypeInBasket={props.countTypeInBasket} {...MyBasket} addToBasket={props.addToBasket}  removeFromBasket={props.removeFromBasket} key={index}/>);  
  console.log(props.MyBasket);
     return ( 
-      <aside>
+      <div>
         <div>
           <h2>Your basket</h2>
           {basketItemsArr}
@@ -58,7 +58,7 @@ props.MyBasket.forEach((prop) => {
         <h3>Checkout</h3>
         <form></form>
         <Button />
-      </aside>
+        </div>
     );
   }
   

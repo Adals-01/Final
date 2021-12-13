@@ -7,7 +7,7 @@ import ServingList from "../components/ServingList";
 
 export default function Dashboard(props) {
   return (
-    <main>
+    <main className="dashboard-main">
       <aside>
         <h2>Taps</h2>
         {props.data.taps && <TapList taps={props.data.taps} />}
