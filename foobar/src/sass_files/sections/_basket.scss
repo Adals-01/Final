@@ -40,30 +40,127 @@
   }
 }
 
-._hsN1w,
-.next {
-  background-color: colors.$white;
-  color: colors.$black;
-  border: 1px colors.$black solid;
-}
-.next:hover {
-  border: 1px colors.$black solid;
-}
-.prev {
-  background-color: colors.$white;
-  color: colors.$black;
-  border: 1px colors.$black solid;
-}
-.prev:hover {
-  background-color: colors.$white;
-  color: colors.$black;
-  border: 1px colors.$black solid;
+//Checkout form
+
+.error {
+  color: rgb(102, 66, 74);
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.3s max-height;
 }
 
-.step,
-.step::after {
-  color: colors.$black;
-  ._2kL0S {
-    background-color: colors.$black;
-  }
+input {
+  background-color: colors.$black;
+  border: 1px colors.$white solid;
+}
+
+input:valid {
+  border-color: rgb(53, 105, 53);
+}
+
+input:invalid:not(:placeholder-shown, :focus) {
+  border-color: rgb(124, 36, 55);
+}
+
+input:invalid:not(:placeholder-shown, :focus) + .error {
+  max-height: 2rem;
+}
+
+input::placeholder {
+  opacity: 50%;
+}
+
+form {
+  margin: 10vw;
+}
+
+form > * + *,
+fieldset > * + *:not(.address) {
+  margin-top: 1.5rem;
+}
+
+.form-group {
+  display: grid;
+  gap: 5px;
+}
+
+label {
+  font-weight: 700;
+  line-height: 1;
+  padding-bottom: 0.4rem;
+}
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: #212121;
+  border: 1px solid #21212133;
+  background: #f5f5f5;
+  padding: 8px 12px 10px;
+  border-radius: 4px;
+  outline: none;
+  caret-color: rebeccapurple;
+}
+
+input:focus {
+  border-color: rgb(255, 255, 255);
+}
+
+[id*="hint"],
+span {
+  color: #585858;
+  line-height: 1.4;
+  transition: 0.3s;
+}
+
+.form-group:focus-within span {
+  color: rgb(255, 255, 255);
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 2rem 0;
+  text-align: left;
+}
+
+legend {
+  padding: 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+legend + .form-group {
+  margin-top: 1rem;
+}
+
+html {
+  height: 100%;
+}
+
+.firstname-lastname {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.hint-mail {
+  font-size: 0.9rem;
+}
+
+#expirationdate,
+#securitycode {
+}
+
+#expirationdate {
+  width: 6ch;
+}
+
+#securitycode {
+  width: 4ch;
+}
+
+.first-name,
+.last-name {
+  display: grid;
+  grid-column: auto;
 }
