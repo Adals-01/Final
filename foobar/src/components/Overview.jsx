@@ -2,7 +2,9 @@ export default function Overview(props) {
   const unixtime = props.data.timestamp;
   var date = new Date(unixtime);
   const hour = date.getHours();
-
+  //counting orders served
+  // const served = [];
+  console.log(props.ordersCompleted);
   return (
     <section className="overview">
       <h1>
@@ -20,7 +22,7 @@ export default function Overview(props) {
       </h1>
       <div className="stats">
         <div className="statsItem">
-          <div className="statNumber">?</div>
+          <div className="statNumber">{props.ordersCompleted}</div>
           <p> Orders Completed </p>
         </div>
         <div className="statsItem">

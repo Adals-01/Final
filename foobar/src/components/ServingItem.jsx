@@ -3,26 +3,23 @@ import Peter from "../assets/Peter.jpg";
 import Dannie from "../assets/Dannie.jpg";
 import Klaus from "../assets/Klaus.jpg";
 import Jonas from "../assets/Jonas.jpg";
-import React, { forwardRef } from 'react';
-
-
+import React, { useState, forwardRef } from "react";
 
 const images = {
- Peter, 
- Klaus, 
- Dannie, 
- Jonas
+  Peter,
+  Klaus,
+  Dannie,
+  Jonas,
 };
 
 function getImageByKey(key, i) {
   return images[key];
 }
 
-
-
-  const ServingItem = forwardRef((props, ref) => {
+const ServingItem = forwardRef((props, ref) => {
   /*  const queueItemArr = props.order.map((order, index) => <QueueItemOrder key={index} order={order} />); */
   const order = props.order;
+  // const copyServingArray = [...servingArray];
 
   //Only show 1 if dublicates
   let nodublicates = [];
@@ -53,10 +50,12 @@ function getImageByKey(key, i) {
       <div>
         {(() => {
           if (customerId === props.id) {
-            return (<div className = "bartender-img-container">
-              {/* <p>{bartender}</p> */}
-            <img className="bartender-img" src={getImageByKey(bartender)} alt={bartender} />
-            </div>)
+            return (
+              <div className="bartender-img-container">
+                {/* <p>{bartender}</p> */}
+                <img className="bartender-img" src={getImageByKey(bartender)} alt={bartender} />
+              </div>
+            );
           }
         })()}
       </div>
@@ -69,8 +68,7 @@ function getImageByKey(key, i) {
       {props.startTime && <GetTime starttime={props.startTime} />}
       {beers}
     </div>
-   
   );
-})
+});
 
-export default ServingItem
+export default ServingItem;

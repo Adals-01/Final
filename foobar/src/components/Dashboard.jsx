@@ -14,7 +14,7 @@ export default function Dashboard(props) {
       </aside>
       <div className="right-side">
         <div className="overview-logo">
-          <Overview data={props.data} />
+          <Overview data={props.data} ordersCompleted={props.ordersCompleted} />
           <img className="foobar-logo" src={logo} alt={"foobar-logo"} />
         </div>
         <h2>Orders</h2>
