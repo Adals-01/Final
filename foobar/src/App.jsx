@@ -3,6 +3,7 @@ import "./App.scss";
 import Dashboard from "./components/Dashboard";
 import Homepage from "./components/Order/home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Beerlist from "./components/Order/beerlist";
 
 function App() {
@@ -77,7 +78,12 @@ function App() {
           <h2>Storage</h2>
           {data.storage && <StorageList storages={data.storage} />}
         </div> */}
+
       <Router>
+        <ul>
+          <Link to={"./dashboard"}>Dashboard</Link>
+          <Link to={"./home"}>Order Form</Link>
+        </ul>
         <Routes>
           <Route path="/dashboard" element={<Dashboard data={data} ordersCompleted={ordersCompleted} />}></Route>
           <Route path="/home" element={<Homepage data={data} />}></Route>
