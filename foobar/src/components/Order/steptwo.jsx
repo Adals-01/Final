@@ -12,7 +12,6 @@ const data = props.MyBasket.map((beer) => {
     name: beer.name,
     amount: 1,
   };
-
 });
 
 function handleSubmit(e) {
