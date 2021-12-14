@@ -60,7 +60,8 @@
   border: 1px colors.$black solid;
 }
 
-.step {
+.step,
+.step::after {
   color: colors.$black;
   ._2kL0S {
     background-color: colors.$black;

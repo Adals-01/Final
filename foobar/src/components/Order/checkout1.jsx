@@ -1,28 +1,58 @@
+import React from "react";
+import UniverStep from "./UniverStep";
+import OrgStep from "./OrgStep";
 import StepProgressBar from "react-step-progress";
-// import the stylesheet
-
 import "react-step-progress/dist/index.css";
+import styles from "./step.module.scss";
+import StepProgress from "./StepProgress";
 
-export default function Checkout() {
-  const Step1Content = (props) => <h1>Hello</h1>;
-  const step2Content = <h1>wtf</h1>;
-  const step3Content = <h1>this works</h1>;
+const OnboardStep = () => {
+  const childArray = [
+    { id: 1, content: <UniverStep /> },
+    { id: 2, content: <OrgStep /> },
+    { id: 3, content: <OrgStep /> },
+    { id: 4, content: <OrgStep /> },
+    { id: 5, content: <OrgStep /> },
+  ];
+ 
+  return (
+    <section className={styles.stepPage}>
+      <StepProgress childArray={childArray} />
+    </section>
+  );
+
+
+  let sum = props.MyBasket.reduce(function (previousValue, currentValue) {
+    return previousValue + currentValue.price;
+  }, initialValue);
+  const noDublicates = [...new Map(props.MyBasket.map((v) => [v.name, v])).values()];
+  let basketItemsArr = noDublicates.map((MyBasket, index) => <BasketItem countTypeInBasket={props.countTypeInBasket} {...MyBasket} addToBasket={props.addToBasket} removeFromBasket={props.removeFromBasket} key={index} />);
+    console.log(basketItemsArr)
   
-  // setup step validators, will be called before proceeding to the next step
-  function step2Validator() {
-      
-    return true;
-    
-  }
+    return(
+    <div className="basket-wrapper">
+      <div>
+        <h2>Here is what you have chosen:</h2>
+        <div>{basketItemsArr}</div>
+        <p> {props.MyBasket.length}  items</p>
+      </div>
+      <div className="bottom-cart">
+        <p className="total">Total:</p>
+        <div>
+         {/*  <p>{props.MyBasket.length * sum} DKK</p> */}
+        </div>
+      </div>
+    </div>
+  );}
 
+  const step2Content = <div></div>;
+  const step3Content = <h1>this works</h1>;
 
-  function step3Validator() {
-    // return a boolean
-  }
   return (
     <div className="App">
-      <StepProgressBar {...MyBasket} props={props.MyBasket}
+      <StepProgressBar MyBasket={props.MyBasket} 
         startingStep={0}
+
         stepClass="step"
         wrapperClass="progress-wrapper-custom"
         secondaryBtnClass="prev"
@@ -30,26 +60,12 @@ export default function Checkout() {
         buttonWrapperClass="btn-wrap"
         previousBtnName="Back"
         nextBtnName="Next"
-        stepClass="step"
-        steps={[
-          { label: "",
-            name: "Briefing",
-            content: Step1Content
-          },
-          {
-            label: "",
-            name: "Image-Acquisition",
-            content: step2Content
-          },
-          {
-            label: "",
-            name: "Image Processing",
-            content: step3Content,
-            validator: step2Validator
-          },
-
-        ]}
+        stepClass="usersteps"
       />
     </div>
   );
-}
+
+
+
+
+export default OnboardStep;
