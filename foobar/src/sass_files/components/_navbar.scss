@@ -1,0 +1,22 @@
+@use "../base/colors.scss";
+.navbar-container {
+  position: relative;
+
+  .icon {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+  .navbar {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: colors.$black;
+    z-index: 99;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-top: 1px solid colors.$white;
+  }
+}

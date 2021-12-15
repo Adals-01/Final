@@ -8,11 +8,12 @@ import row26 from "../../assets/row26.png";
 import ruinedchildhood from "../../assets/ruinedchildhood.png";
 import sleighride from "../../assets/sleighride.png";
 import steampunk from "../../assets/steampunk.png";
+import listicon from "../../assets/icons/list-icon.svg";
+import carticon from "../../assets/icons/cart-icon.svg";
+import homeicon from "../../assets/icons/home-icon.svg";
 
 
 export default function getImageByKey(key) {
-
-
   const images = {
     elhefe,
     fairytaleale,
@@ -24,6 +25,9 @@ export default function getImageByKey(key) {
     ruinedchildhood,
     sleighride,
     steampunk,
+    listicon,
+    carticon,
+    homeicon, 
   };
   
   return images[key];
