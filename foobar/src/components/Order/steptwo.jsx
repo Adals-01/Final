@@ -55,7 +55,7 @@ function handleSubmit(e) {
         {/*CARD NR*/}
         <div className="field-container card-info">
           <label htmlFor="cardnumber">Card Number</label>
-          <div>
+          <div className="card-info-sub">
             <input id="cardnumber" type="text" pattern="[0-9]*" inputMode="numeric"></input>
 
             {/* mm/yy */}
@@ -64,7 +64,7 @@ function handleSubmit(e) {
             <input placeholder="CVC" id="securitycode" type="text" pattern="[0-9]*" inputMode="numeric" />
           </div>
         </div>
-        <button className="next">NEXT</button>
+        <div className="button-wrapper"><button className="next">CONFIRM PAYMENT</button></div>
       </form>
     </div>
   );
