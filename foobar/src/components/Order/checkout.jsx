@@ -13,22 +13,51 @@ export default function Checkout(props) {
   const [styleNext, setStyleNext] = useState(`translateX(calc(( ${currentActive}) * -33.3%`);
 
   const GoNext = () => {
-    const newCurrentActive = currentActive + 1;
+    let newCurrentActive = currentActive + 1;
     setCurrentActive(newCurrentActive);
     setStyleNext(`translateX(calc(( ${newCurrentActive}) * -33.3% )`);
 
   }
+   const GoBack = () => {
+    let newCurrentActive = currentActive - 1;
+    if (currentActive >= 0) {
+    setCurrentActive(newCurrentActive);
+    setStyleNext(`translateX(calc(( ${newCurrentActive}) * -33.3% )`);
+    }}
+  
   
   function Circle(props) {
     if (currentActive >= (props.nr - 1)) {
       return  <div  className="circle active">{props.nr}</div>;
     }
     return <div  className="circle">1</div>;
-  }
-
-
-
+  }  
   
+  function BackButton(props) {
+    if (currentActive === 0) {
+      return  <button style={{"visibility":"hidden"}}></button>;
+    }
+    if (currentActive === 1) {
+      return <button id="prev" onClick={GoBack}>BACK</button>;;
+    }
+    else{
+    return <button style={{"visibility":"hidden"}}></button>;}
+  }  
+  function NextButton(props) {
+    if (currentActive === 1) {
+      return   <button form='my-form' onClick={GoNext} className="active" type="submit">CONFIRM PAYMENT</button>;
+    }
+    if (currentActive === 2) {
+      return <button style={{"visibility":"hidden"}}></button>;
+    }
+
+    else{
+    return <button id="next" className="active" onClick={GoNext}>
+    NEXT
+  </button>;}
+  }  
+
+
   
   return (
     <div className="checkout">
@@ -49,13 +78,14 @@ export default function Checkout(props) {
       <div className="mask">
         <section style = {{transform:styleNext}} className="steps">
           <StepOne countTypeInBasket={props.countTypeInBasket} addToBasket={props.addToBasket} removeFromBasket={props.removeFromBasket} products={props.products} MyBasket={props.MyBasket} />
-          <StepTwo countTypeInBasket={props.countTypeInBasket} addToBasket={props.addToBasket} removeFromBasket={props.removeFromBasket} products={props.products} MyBasket={props.MyBasket} />
+          <StepTwo currentActive={props.newCurrentActive} countTypeInBasket={props.countTypeInBasket} addToBasket={props.addToBasket} removeFromBasket={props.removeFromBasket} products={props.products} MyBasket={props.MyBasket} />
           <StepThree/>
         </section>
       </div>
-      <button id="next" onClick={GoNext}>
-        NEXT
-      </button>
+      <div className="button-container">
+      <BackButton/>
+      <NextButton/>
+      </div>
     </div>
   );
 }

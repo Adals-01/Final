@@ -22,10 +22,12 @@ export default function StepTwo(props) {
       form.current.reportValidity();
     }
   }
+
+  /* action="" ref={form} onSubmit={handleSubmit} */
   return (
     <div className="form-container">
-      <form action="" ref={form} onSubmit={handleSubmit}>
-        <h2>Now you pay</h2>
+      <form id='my-form' ref={form} onSubmit={handleSubmit} >
+        <h2>Now you pay </h2>
         <div className="form-group">
           <label htmlFor="email">Email</label>
           <span className="hint-mail" id="hint-mail">
@@ -53,18 +55,18 @@ export default function StepTwo(props) {
         <div className="field-container card-info">
           <label htmlFor="cardnumber">Card Number</label>
           <div className="card-info-sub">
-            <input id="cardnumber" placeholder="XXXX XXXX XXXX XXXX" pattern="\d{4} \d{4} \d{4} \d{4}"   type="text" pattern="[0-9]*" inputMode="numeric"></input>
+            <input id="cardnumber" /* placeholder="XXXX XXXX XXXX XXXX"  *//* pattern="\d{4} \d{4} \d{4} \d{4}" */   type="text" pattern="[0-9]*" inputMode="numeric"></input>
 
             <div className="exp-sec">
               {/* mm/yy */}
-              <input id="expirationdate" placeholder="MM/YY" type="text" pattern="[0-9]*" inputMode="numeric" />
+              <input id="expirationdate" placeholder="MM/YY" type="text" /* pattern="[0-9]*" */ /* inputMode="numeric"  *//>
               {/* CVC */}
               <input placeholder="CVC" id="securitycode" type="text" pattern="[0-9]*" inputMode="numeric" />
             </div>
           </div>
         </div>
         <div className="button-wrapper">
-          <button className="next">CONFIRM PAYMENT</button>
+        {/*   <button className="next">CONFIRM PAYMENT</button> */}
         </div>
       </form>
     </div>
