@@ -1,20 +1,39 @@
 @use "../base/colors.scss";
 
+.main-orderform {
+  h1 {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+  }
+}
+
 .basket-wrapper {
+  min-height: 40vh;
+  background-color: colors.$black;
+}
+
+.checkout {
   .basketItem {
-    .beerLabel {
-      height: 5rem;
-      width: 5rem;
-      padding: 1rem;
+    p {
+      padding-top: 1rem;
     }
   }
-  .progressPlacement {
+
+  .beerLabel {
+    height: 4rem;
+    width: 4rem;
+  }
+  .progress-placement {
     display: flex;
     text-align: center;
     justify-content: center;
+    align-items: flex-end;
+    padding-top: 3rem;
+    padding-top: 5rem;
   }
 
   .progress-container {
+    justify-content: center;
     display: flex;
   }
 
@@ -31,7 +50,7 @@
     background-color: colors.$black;
     color: colors.$white;
     border: 1px colors.$white solid;
-    border-radius: 2rem;
+    border-radius: 40px;
   }
 
   .active {
@@ -42,7 +61,7 @@
   //Checkout form
 
   .error {
-    color: rgb(102, 66, 74);
+    color: rgb(228, 115, 139);
     max-height: 0;
     overflow: hidden;
     transition: 0.3s max-height;
@@ -53,12 +72,12 @@
     border: 1px colors.$white solid;
   }
 
-  input:valid {
+  /*  input:valid {
     border-color: rgb(53, 105, 53);
-  }
+  } */
 
   input:invalid:not(:placeholder-shown, :focus) {
-    border-color: rgb(124, 36, 55);
+    border-color: rgb(228, 115, 139);
   }
 
   input:invalid:not(:placeholder-shown, :focus) + .error {
@@ -66,7 +85,7 @@
   }
 
   input::placeholder {
-    opacity: 50%;
+    opacity: 100%;
   }
 
   form {
@@ -84,25 +103,28 @@
   }
 
   label {
-    font-weight: 700;
     line-height: 1;
-    padding-bottom: 0.4rem;
+    padding-bottom: 0.6rem;
   }
 
   input {
     -webkit-appearance: none;
     -moz-appearance: none;
-    color: #212121;
-    border: 1px solid #21212133;
-    background: #f5f5f5;
+    color: colors.$white;
+    border: 1px solid colors.$white;
+    background: colors.$black;
     padding: 8px 12px 10px;
-    border-radius: 4px;
+    border-radius: 15px;
     outline: none;
-    caret-color: rebeccapurple;
+    caret-color: colors.$white;
+    padding-top: 0.6rem;
   }
 
   input:focus {
     border-color: rgb(255, 255, 255);
+  }
+  input::placeholder {
+    color: rgb(153, 153, 153);
   }
 
   [id*="hint"],
@@ -146,7 +168,20 @@
     font-size: 0.9rem;
   }
 
-  #expirationdate {
+  /*   #expirationdate,
+  #securitycode {
+  }
+ */
+
+  input#expirationdate,
+  input#securitycode,
+  input#cardnumber {
+    border: none;
+  }
+
+  input#expirationdate {
+    border-right: 1px solid colors.$white;
+    border-radius: 0px;
     width: 6ch;
   }
 
@@ -154,9 +189,54 @@
     width: 4ch;
   }
 
+  .card-info-sub {
+    display: flex;
+    justify-content: space-around;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    color: colors.$white;
+    border: 1px solid colors.$white;
+    background: colors.$black;
+    border-radius: 15px;
+    outline: none;
+    caret-color: colors.$white;
+  }
+
   .first-name,
   .last-name {
     display: grid;
     grid-column: auto;
   }
+
+  .next {
+    padding-bottom: 0.6rem;
+    font-weight: 400;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2rem;
+  }
+
+  .mask {
+    overflow: hidden;
+  }
+}
+
+.step-three {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    margin-top: 1rem;
+  }
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 0%;
+  width: 300%;
+  transition: 0.4s ease;
 }

@@ -33,6 +33,7 @@ function removeFromBasket(product) {
   return (
       <main>
         <div className="main-orderform">
+          <h1>Thirsty? Have a look at our selection.</h1>
         <Beerlist countTypeInBasket={countTypeInBasket} addToBasket={addToBasket} removeFromBasket={removeFromBasket} products={products} data={props.data}/>
         <Checkout countTypeInBasket={countTypeInBasket} addToBasket={addToBasket} removeFromBasket={removeFromBasket} products={products} MyBasket={basket}/>
         </div>
