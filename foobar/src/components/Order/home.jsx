@@ -15,7 +15,7 @@ export default function Homepage(data) {
         <img className="foobar-logo" src={logo} alt={"foobar-logo"} />
         <h1>sip sip</h1>
         <button>
-          <Link to={"/beerlist"} className="link">
+          <Link to={"/mainpage"} className="link">
             order a beer
           </Link>{" "}
         </button>
