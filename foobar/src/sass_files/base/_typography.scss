@@ -17,6 +17,10 @@
   font-weight: 300;
 }
 
+.form-container {
+  font-family: mundial-hair;
+}
+
 //h1 greeting, h2 section header
 h1,
 h2,
@@ -39,7 +43,9 @@ h3:before {
 }
 
 li,
-button {
+button,
+.prev,
+.next {
   font-family: mundial-hair;
   font-size: 1em;
 }

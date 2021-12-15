@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import getImageByKey from "./getImageByKey";
+import PlusMinus from "./plusminus";
 // import { Link } from "react-router-dom";
 import elhefe from "../../assets/elhefe.png";
 import fairytaleale from "../../assets/fairytaleale.png";
@@ -24,22 +26,23 @@ const images = {
   steampunk,
 };
 
-function getImageByKey(key) {
+/* function getImageByKey(key) {
   return images[key];
-}
-function addToBasket(product) {
+} */
+/* function addToBasket(product) {
   setBasket(function (oldBasket) {
     const nextState = oldBasket.concat(product);
     return nextState;
   });
 }
+ */
 
 export default function Beerlistitem(props) {
   const beer = props.name;
-  const alc = props.alc;
-
   let beerimg = beer.replace(/\s+/g, "").toLowerCase();
-  let price = alc.toString().split(".").join("");
+
+ const alc = props.alc;
+ let price = alc.toString().split(".").join(""); 
 
   const initialCount = 0;
   const [count, setCount] = useState(initialCount);
@@ -96,6 +99,7 @@ export default function Beerlistitem(props) {
       </div>
       <div className="rightSide">
         <h3>{props.name}</h3>
+        <p>{props.alc}% alc</p>
         <p>{props.description.overallImpression}</p>
 
         <div>
@@ -109,34 +113,12 @@ export default function Beerlistitem(props) {
           })()}
           {/* <p onClick={beerInfo}>
             More info{BeerInfo ? <Results /> : null}
-          </p> */}
-        </div>
-        <div className="addContainer">
-          <button
-            className="circleButton"
-            onClick={(e) => {
-              if (count > 0) {
-                setCount((prevCount) => prevCount - 1);
-              }
-            }}
-          >
-            -
-          </button>
-          <p>{count}</p>
-
-          <button
-            className="circleButton"
-            onClick={(e) => {
-              setCount((prevCount) => prevCount + 1);
-              props.addToBasket({
-                price: props.price,
-              });
-            }}
-          >
-            +
-          </button>
-        </div>
+          </p> 
+        </div>*/}
+      
+      <PlusMinus {...props}/>
       </div>
+    </div>
     </div>
   );
 }

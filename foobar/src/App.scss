@@ -1,14 +1,15 @@
 @import "sass_files/base/reset";
 @import "sass_files/base/typography";
-
+@import "sass_files/components/orderticket";
+@import "sass_files/components/buttons";
 @import "sass_files/layout/grid";
-
 @import "sass_files/sections/queue";
 @import "sass_files/sections/overview";
 @import "sass_files/sections/storage";
 @import "sass_files/sections/taps";
 @import "sass_files/sections/homepage";
 @import "sass_files/sections/beerlist";
-@import "sass_files/sections/beeritem";
-@import "sass_files/components/orderticket";
-@import "sass_files/components/buttons";
+/* @import "sass_files/sections/beeritem"; */
+/* @import "sass_files/components/orderticket"; */
+/* @import "sass_files/components/buttons"; */
+@import "sass_files/sections/basket";
