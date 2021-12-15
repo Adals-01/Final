@@ -21,3 +21,12 @@ a img,
 li {
   list-style: none;
 }
+
+.link {
+  text-decoration: none;
+  color: colors.$white;
+}
+
+.link:hover {
+  color: rgb(124, 130, 128);
+}

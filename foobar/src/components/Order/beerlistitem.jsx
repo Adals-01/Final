@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-
+import React, { useState } from "react";
+// import { Link } from "react-router-dom";
 import elhefe from "../../assets/elhefe.png";
 import fairytaleale from "../../assets/fairytaleale.png";
 import githop from "../../assets/githop.png";
@@ -44,6 +44,51 @@ export default function Beerlistitem(props) {
   const initialCount = 0;
   const [count, setCount] = useState(initialCount);
   const [basket, setBasket] = useState([]);
+
+  //BEER ITEM PAGE INFO
+  // var WordPOS = require("wordpos"),
+  // wordpos = new WordPOS();
+  // const [BeerInfo, showBeerInfo] = React.useState(false);
+  // const beerInfo = () => showBeerInfo(true);
+  // console.log(props);
+  // const getAdjectives = wordpos.getAdjectives("The angry bear chased the frightened little squirrel.", function (result) {
+  //   console.log(result);
+  // });
+  // getAdjectives;
+  // const Results = () => (
+  //   <div id="results" className="beerItem">
+  //     <img className="beerLabel" src={getImageByKey(beerimg)} alt={beerimg} />
+  //     <div className="beerPoints">
+  //       <div class="point">
+  //         <p>CATEGORY</p>
+  //         <h3>{props.category}</h3>
+  //       </div>
+  //       <div class="point">
+  //         <p>ALCOHOL</p>
+  //         <h3>{props.alc}</h3>
+  //       </div>
+  //       <div class="point">
+  //         <p>PRICE</p>
+  //         <h3>{price}</h3>
+  //       </div>
+  //     </div>
+  //     <h2>OVERALL IMPRESSION</h2>
+  //     <p>{props.overallImpression}</p>
+  //     <div>
+  //       <div>
+  //         <h3>FLAVOR</h3>
+  //         <h3>AROMA</h3>
+  //         <h3>MOUTHFEEL</h3>
+  //       </div>
+  //       <div>
+  //         <h3 className="adjective"></h3>
+  //         <h3 className="adjective"></h3>
+  //         <h3 className="adjective"></h3>
+  //       </div>
+  //     </div>
+  //   </div>
+  // );
+
   return (
     <div className="beerListItem">
       <div className="leftSide">
@@ -62,6 +107,9 @@ export default function Beerlistitem(props) {
               return <p>{price} DKK</p>;
             }
           })()}
+          {/* <p onClick={beerInfo}>
+            More info{BeerInfo ? <Results /> : null}
+          </p> */}
         </div>
         <div className="addContainer">
           <button

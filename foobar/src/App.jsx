@@ -3,8 +3,9 @@ import "./App.scss";
 import Dashboard from "./components/Dashboard";
 import Homepage from "./components/Order/home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Link } from "react-router-dom";
 import Beerlist from "./components/Order/beerlist";
+// import Beeritem from "./components/Order/beeritem";
+import Links from "./components/Links";
 
 function App() {
   const [data, setItems] = useState([]);
@@ -61,33 +62,13 @@ function App() {
 
   return (
     <div className="App">
-      {/* <aside>
-          <h2>Taps</h2>
-          {data.taps && <TapList taps={data.taps} />}
-        </aside>
-        <div className="right-side">
-          <div className="overview-logo">
-            <Overview data={data} />
-            <img className="foobar-logo" src={logo} alt={"foobar-logo"} />
-          </div>
-          <h2>Orders</h2>
-          <div className="serving-and-queue">
-            {data.serving && <ServingList serving={data.serving} />}
-            {data.queue && <QueueList queue={data.queue} />}
-          </div>
-          <h2>Storage</h2>
-          {data.storage && <StorageList storages={data.storage} />}
-        </div> */}
-
       <Router>
-        <ul>
-          <Link to={"./dashboard"}>Dashboard</Link>
-          <Link to={"./home"}>Order Form</Link>
-        </ul>
         <Routes>
+          <Route exact path="/" element={<Links />}></Route>
           <Route path="/dashboard" element={<Dashboard data={data} ordersCompleted={ordersCompleted} />}></Route>
           <Route path="/home" element={<Homepage data={data} />}></Route>
           <Route path="/beerlist" element={<Beerlist data={beerdata} />}></Route>
+          {/* <Route path="beerlist/beeritem" element={<Beeritem data={beerdata} />}></Route> */}
         </Routes>
       </Router>
     </div>
