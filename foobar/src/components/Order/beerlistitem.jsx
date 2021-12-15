@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import getImageByKey from "./getImageByKey";
 import PlusMinus from "./plusminus";
 // import { Link } from "react-router-dom";
-import elhefe from "../../assets/elhefe.png";
+/* import elhefe from "../../assets/elhefe.png";
 import fairytaleale from "../../assets/fairytaleale.png";
 import githop from "../../assets/githop.png";
 import hollabacklager from "../../assets/hollaback.png";
@@ -25,10 +25,10 @@ const images = {
   sleighride,
   steampunk,
 };
-
+ */
 /* function getImageByKey(key) {
   return images[key];
-} */
+} 
 /* function addToBasket(product) {
   setBasket(function (oldBasket) {
     const nextState = oldBasket.concat(product);
