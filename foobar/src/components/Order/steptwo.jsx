@@ -66,9 +66,10 @@ export default function StepTwo(props) {
           </div>
         </div>
         <div className="button-wrapper">
-        {/*   <button className="next">CONFIRM PAYMENT</button> */}
+        
         </div>
       </form>
+      
     </div>
   );
 }

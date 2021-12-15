@@ -45,7 +45,8 @@ export default function Checkout(props) {
   }  
   function NextButton(props) {
     if (currentActive === 1) {
-      return   <button form='my-form' onClick={GoNext} className="active" type="submit">CONFIRM PAYMENT</button>;
+      return   <button className="active" form='my-form' type="submit" >CONFIRM PAYMENT</button> 
+      ;
     }
     if (currentActive === 2) {
       return <button style={{"visibility":"hidden"}}></button>;
