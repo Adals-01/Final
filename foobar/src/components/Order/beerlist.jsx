@@ -5,7 +5,7 @@ import Beerlistitem from "./beerlistitem";
   return (
     <div className="Home">
       <main>
-        <section>{beerArr}</section>
+        <section className="beerlist-wrapper">{beerArr}</section>
       </main>
     </div>
   );

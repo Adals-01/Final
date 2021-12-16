@@ -1,12 +1,17 @@
 @use "../base/colors.scss";
 button,
-.prev {
+#prev {
   background-color: colors.$black;
   color: colors.$white;
   text-transform: uppercase;
   border: 1px solid colors.$white;
   padding: 0.3rem 0.6rem;
   font-size: 1.4rem;
+}
+
+button:hover {
+  box-shadow: colors.$box-shaddow;
+  transition: 0.3s ease;
 }
 
 .next {
@@ -17,4 +22,10 @@ button,
   background-color: colors.$white;
   color: colors.$black;
   border: 1px solid colors.$white;
+}
+
+.simplebar-scrollbar {
+  background-color: rgb(85, 85, 85);
+  border-radius: 1rem;
+  transition: 0.4 ease;
 }

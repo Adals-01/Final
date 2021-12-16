@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 export default function Homepage(data) {
   return (
     <div className="Home">
-      <img className="left" src={leaf1} alt={"hop leaf"} />
-      <img className="right" src={straw1} alt={"straw leaf"} />
+      <img className="left top" src={leaf1} alt={"hop leaf"} />
+      <img className="right top" src={straw1} alt={"straw leaf"} />
       <div className="center">
         <img className="foobar-logo" src={logo} alt={"foobar-logo"} />
         <h1>sip sip</h1>

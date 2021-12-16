@@ -11,9 +11,9 @@
   margin: 5vh 5vw 0rem 3vw;
   gap: 5vw;
 
-  .right-side > * {
+  /*  .right-side > * {
     margin: 0rem 0rem 1rem 0rem;
-  }
+  } */
 
   .overview-logo {
     display: grid;
@@ -30,6 +30,10 @@
       "as";
     .right-side {
       grid-area: rs;
+
+      .overview-logo {
+        grid-template-columns: 1fr;
+      }
     }
 
     aside {

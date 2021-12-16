@@ -37,17 +37,15 @@ h3 {
 
 //reciept date and time, overview small text
 p,
-h3:before {
+li,
+h3:before,
+.addContainer,
+.plusminus-button,
+.prev,
+.next,
+label {
   font-family: mundial-hair;
   font-size: 0.8em;
-}
-
-li,
-button,
-.prev,
-.next {
-  font-family: mundial-hair;
-  font-size: 1em;
 }
 
 @media screen and (max-width: 992px) {

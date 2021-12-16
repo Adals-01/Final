@@ -3,17 +3,22 @@ import StepOne from "./stepone";
 import StepTwo from "./steptwo.jsx";
 import StepThree from "./stepthree.jsx";
 import React, { useState } from "react";
+import { useRef } from "react";
 
 /* PROGRESS BAR */
 export default function Checkout(props) {
   const [currentActive, setCurrentActive] = useState(0);
   const [styleNext, setStyleNext] = useState(`translateX(calc(( ${currentActive}) * -33.3%`);
 
+  const submit = useRef();
+
+
   const GoNext = () => {
     let newCurrentActive = currentActive + 1;
     setCurrentActive(newCurrentActive);
     setStyleNext(`translateX(calc(( ${newCurrentActive}) * -33.3% )`);
   };
+
   const GoBack = () => {
     let newCurrentActive = currentActive - 1;
     if (currentActive >= 0) {
@@ -28,6 +33,11 @@ export default function Checkout(props) {
     }
     return <div className="circle">{props.nr}</div>;
   }
+
+  const GoSubmit = () => {
+    submit.current.click();
+    GoNext(); 
+  };
 
   function BackButton() {
     if (currentActive === 0) {
@@ -46,9 +56,12 @@ export default function Checkout(props) {
   function NextButton() {
     if (currentActive === 1) {
       return (
-        <button className="active" form="my-form" type="submit">
-          CONFIRM PAYMENT
-        </button>
+        <>
+          <button onClick={GoSubmit}></button>
+          <button ref={submit} className="active" form="my-form" type="submit">
+            CONFIRM PAYMENT
+          </button>
+        </>
       );
     }
     if (currentActive === 2) {

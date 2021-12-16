@@ -9,6 +9,10 @@ export default function Beerlistitem(props) {
   const alc = props.alc;
   let price = alc.toString().split(".").join("");
 
+
+  let removeVariable  = props.description.overallImpression.replace('Variable.','');
+  //Get first sentence (split at ".")
+  let description = removeVariable.split('\.', 1)[0];
   const initialCount = 0;
   const [count, setCount] = useState(initialCount);
   const [basket, setBasket] = useState([]);
@@ -54,8 +58,8 @@ export default function Beerlistitem(props) {
       </div>
       <div className="rightSide">
         <h3>{props.name}</h3>
+        <p className="beer-item-description">{description}</p>
         <p>{props.alc}% alc</p>
-        <p>{props.description.overallImpression}</p>
 
         <div>
           {(() => {

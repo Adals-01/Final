@@ -3,6 +3,7 @@ import Beerlist from "./beerlist";
 import React, { useState } from "react";
 import Checkout from "./checkout";
 import getImageByKey from "./getImageByKey";
+import logo from "../../assets/foobar-logo.svg";
 
 export default function Mainpage(props) {
   const [basketPlacement, setbasketPlacement] = useState(false);
@@ -10,19 +11,24 @@ export default function Mainpage(props) {
   const [products, setProducts] = useState([]);
   const [basket, setBasket] = useState([]);
 
+
   function toggleBasket() {
     setbasketPlacement((basketPlacement) => !basketPlacement);
     if (basketPlacement === true) {
       setmoveBasket("translateY(100vh)");
-      console.log(basketPlacement);
-      console.log(moveBasket);
+
     }
     if (basketPlacement === false) {
       setmoveBasket("translateY(0vh)");
-      console.log(basketPlacement);
-      console.log(moveBasket);
+     
     }
   }
+
+  function goToList() {
+    if (basketPlacement === true) {
+      toggleBasket();
+  }}
+
 
   function addToBasket(product) {
     setBasket(function (oldBasket) {
@@ -49,10 +55,11 @@ export default function Mainpage(props) {
     return (
       <div className="navbar-container">
         <nav className="navbar">
-          <img className="list-icon icon" src={getImageByKey("listicon")} alt={"list icon"} />
+          <img onClick={goToList} className="list-icon icon" src={getImageByKey("listicon")} alt={"list icon"} />
           <Link to={"/home"} className="link">
             <img className="home-icon icon" src={getImageByKey("homeicon")} alt={"home icon"} />
           </Link>
+
           <img onClick={toggleBasket} className="cart-icon icon" src={getImageByKey("carticon")} alt={"cart icon"} />
         </nav>
       </div>
@@ -62,6 +69,7 @@ export default function Mainpage(props) {
   return (
     <main>
       <Navbar />
+      <div className="foobar-beerlist-logo"><img  src={logo} alt={"foobar-logo"} /></div>
       <div className="main-orderform">
         <h1>Thirsty? Have a look at our selection.</h1>
         <Beerlist countTypeInBasket={countTypeInBasket} addToBasket={addToBasket} removeFromBasket={removeFromBasket} products={products} data={props.data} />

@@ -6,6 +6,16 @@ import { push } from "./postemail";
 export default function StepTwo(props) {
   const [emailReg, setPush] = useState("");
 
+/*   const [currentActive, setCurrentActive] = useState(0);
+  const [styleNext, setStyleNext] = useState(`translateX(calc(( ${currentActive}) * -33.3%`);
+
+  const GoNext = () => {
+    let newCurrentActive = currentActive + 1;
+    setCurrentActive(newCurrentActive);
+    setStyleNext(`translateX(calc(( ${newCurrentActive}) * -33.3% )`);
+  };
+ */
+
   /* POST form*/
   const form = useRef();
   const data = props.MyBasket.map((beer) => {
@@ -17,18 +27,20 @@ export default function StepTwo(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-
+    console.log("refresh prevented");
     if (form.current.checkValidity()) {
       console.log("test");
       post(data);
       push(emailReg);
+
     } else {
       form.current.reportValidity();
     }
   }
+
+
   function logEmail(e) {
     setPush(e.target.value);
-    console.log(emailReg);
   }
 
   return (

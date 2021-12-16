@@ -2,6 +2,7 @@
   .foobar-logo {
     height: 16em;
   }
+
   .center {
     justify-content: center;
     align-items: center;
@@ -11,25 +12,42 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
   h1 {
     font-weight: 100;
   }
   .left {
     float: left;
-    left: 1rem;
+    left: calc(2vw + 0.5rem);
   }
   .right {
     float: right;
-    right: 1rem;
+    right: calc(2vw + 0.5rem);
   }
   .bottom {
     position: absolute;
-    bottom: 1rem;
+    bottom: calc(2vw + 0.5rem);
   }
-  button {
-    margin-top: 2rem;
+
+  .top {
+    position: absolute;
+    top: calc(3vw + 0.5rem);
+  }
+
+  .left.top {
+    height: calc(8vw + 6rem);
+  }
+  .right.top {
+    height: calc(6vw + 3rem);
+  }
+  .left.bottom {
+    height: calc(6vw + 3rem);
+  }
+  .right.bottom {
+    height: calc(8vw + 7rem);
   }
 }
+
 .links {
   padding-top: 5rem;
   justify-content: center;

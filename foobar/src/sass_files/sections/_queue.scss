@@ -1,13 +1,9 @@
 .serving-and-queue {
   display: inline-flex;
   grid-column-gap: 2rem;
-  max-width: 65vw;
   padding-top: 1rem;
   padding-bottom: 1rem;
   /*   overflow-y: auto; */
-}
-.simplebar-scrollbar {
-  overflow-y: hidden;
 }
 
 .queue-list {
@@ -30,6 +26,6 @@
     grid-column-gap: 2rem;
     max-width: 90vw;
     padding-top: 1rem;
-    overflow-y: auto;
+    /* overflow-y: auto; */
   }
 }

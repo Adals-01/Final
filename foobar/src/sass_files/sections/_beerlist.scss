@@ -1,37 +1,36 @@
 @use "../base/colors.scss";
 
+.beerlist-wrapper {
+  margin-bottom: 10rem;
+}
 .basketItem,
 .beerListItem {
+  padding: 1rem;
   position: relative;
-  border: 1px solid white;
-  border-radius: 1rem;
-  margin-bottom: 1.2rem;
+  background-color: colors.$light-black;
+  border-radius: 20px;
+  box-shadow: colors.$box-shaddow;
+  margin-bottom: 2rem;
   display: flex;
   gap: 1rem;
   align-items: flex-start;
   h3 {
     font-weight: 100;
     margin-bottom: 0;
+    margin-top: 0;
   }
-  .beerLabel {
-    height: 7rem;
-    padding: 1rem;
-  }
+
   p {
     margin: 0;
     padding-bottom: 0.4rem;
     white-space: wrap;
     max-width: 45ch;
   }
-  .rightSide {
-    max-height: 10rem;
+
+  .beerLabel {
+    height: 7rem;
   }
-  // .grid {
-  //   display: grid;
-  //   grid-template-columns: 4fr 1fr;
-  //   justify-content: center;
-  //   align-items: center;
-  // }
+
   .addContainer {
     position: absolute;
     right: 1.6rem;
@@ -39,12 +38,29 @@
     display: flex;
     align-items: flex-end;
     gap: 1rem;
+    align-items: center;
+    align-content: space-around;
+    align-items: center;
   }
+  .beer-item-description {
+    margin-bottom: 0.4rem;
+  }
+
   .circleButton {
-    border-radius: 5rem;
-    padding: 0rem 0.6rem;
+    width: 2rem;
+    height: 2rem;
+    /* margin-top: none; */
     background-color: colors.$white;
     color: colors.$black;
+    /*     position: relative; */
+    border-radius: 1rem;
+    font-size: inherit;
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 2rem;
   }
 }
 
@@ -52,10 +68,4 @@
   display: flex;
   justify-content: space-between;
   border-top: 1px solid colors.$white;
-}
-
-.button-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  padding-bottom: 2rem;
 }

@@ -1,17 +1,23 @@
 @use "../base/colors.scss";
 
+.foobar-beerlist-logo {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
 .main-orderform {
   h1 {
-    padding-top: 4rem;
-    padding-bottom: 2rem;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
   }
 }
 
 .basket-wrapper,
 .form-container {
   background-color: colors.$black;
-  padding-right: 10vw;
-  padding-left: 10vw;
+  padding-right: calc(4rem + 10vw);
+  padding-left: calc(4rem + 10vw);
+  padding-bottom: 2rem;
 }
 
 .checkout {
@@ -21,7 +27,7 @@
   width: 100vw;
   height: 100vh;
   background-color: colors.$black;
-  transition: 0.6s ease-in;
+  transition: 0.5s ease;
   .basketItem {
     p {
       padding-top: 1rem;
@@ -69,6 +75,7 @@
     color: colors.$white;
     border: 1px colors.$white solid;
     border-radius: 40px;
+    font-weight: 300;
   }
 
   .active {
@@ -272,5 +279,12 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 0%;
   width: 300%;
-  transition: 0.3s ease-in;
+  transition: 0.4s ease;
+}
+
+@media screen and (min-width: 792px) {
+  .form-container {
+    padding-right: calc(5rem + 26vw);
+    padding-left: calc(5rem + 26vw);
+  }
 }
