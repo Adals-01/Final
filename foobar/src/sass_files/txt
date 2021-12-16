@@ -1,0 +1,25 @@
+sass/
+|
+|- base/
+| |- \_reset // Reset browser styling
+| |- \_typography.scss // Typography Rules
+| |- colors.scss // Colors
+|
+|- components/
+| |- \_beeritem.scss // Beer items
+| |- \_buttons.scss // Buttons
+| |- \_navbar.scss // Navbar
+| |- \_orderticket.scss // Ordertickets
+|
+|- layout/
+| |- \_grid.scss // Overall page layout
+|
+|- sections/
+| |- \_basket.scss // Basket
+| |- \_beeritem.scss // Overall page structure
+| |- \_homepage.scss // Homepage
+| |- \_overview.scss // Overview
+| |- \_queue.scss // Queue
+| |- \_storage.scss // Storage
+| |- \_taps.scss // taps
+|
