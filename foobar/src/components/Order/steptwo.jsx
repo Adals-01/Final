@@ -34,13 +34,8 @@ export default function StepTwo(props) {
   /* action="" ref={form} onSubmit={handleSubmit} */
   return (
     <div className="form-container">
-<<<<<<< HEAD
-      <form id="my-form" ref={form} onSubmit={handleSubmit}>
-        <h2>Now you pay </h2>
-=======
       <form id='my-form' ref={form} onSubmit={handleSubmit} >
         <h2>Your payment details:</h2>
->>>>>>> navbar
         <div className="form-group">
           <label htmlFor="email">Email</label>
           <span className="hint-mail" id="hint-mail">
@@ -69,7 +64,6 @@ export default function StepTwo(props) {
           <label htmlFor="cardnumber">Card Number</label>
           <div className="card-info-sub">
             <input id="cardnumber" /* placeholder="XXXX XXXX XXXX XXXX"  */ /* pattern="\d{4} \d{4} \d{4} \d{4}" */ type="text" pattern="[0-9]*" inputMode="numeric"></input>
-
             <div className="exp-sec">
               {/* mm/yy */}
               <input id="expirationdate" placeholder="MM/YY" type="text" /* pattern="[0-9]*" */ /* inputMode="numeric"  */ />
