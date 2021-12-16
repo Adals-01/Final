@@ -1,19 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import getImageByKey from "./getImageByKey";
 import PlusMinus from "./plusminus";
 
-
 export default function BasketItem(props) {
-    let beerimg = props.name.replace(/\s+/g, "").toLowerCase();
-   /*  let price = alc.toString().split(".").join(""); */
+  let beerimg = props.name.replace(/\s+/g, "").toLowerCase();
+  /*  let price = alc.toString().split(".").join(""); */
 
-return  (
+  let price = props.price.toString().split(".").join("");
+  return (
     <section className="basketItem">
-        <img className="beerLabel" src={getImageByKey(beerimg)} alt={beerimg} />
-    <p>{props.name}</p>
-    <p>{props.price} DKK</p>
-    <PlusMinus {...props}/> 
+      <img className="beerLabel" src={getImageByKey(beerimg)} alt={beerimg} />
+      <p>{props.name}</p>
+      <p>{price} DKK</p>
+      <PlusMinus {...props} />
     </section>
-    
-    )
- }
+  );
+}

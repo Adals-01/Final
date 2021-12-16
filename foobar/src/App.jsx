@@ -4,7 +4,6 @@ import Dashboard from "./components/Dashboard";
 import Homepage from "./components/Order/home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // import Beerlist from "./components/Order/beerlist";
-// import Beeritem from "./components/Order/beeritem";
 import Links from "./components/Links";
 import Mainpage from "./components/Order/mainpage";
 
