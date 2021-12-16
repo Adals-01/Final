@@ -15,8 +15,8 @@
 .basket-wrapper,
 .form-container {
   background-color: colors.$black;
-  padding-right: calc(4rem + 10vw);
-  padding-left: calc(4rem + 10vw);
+  padding-right: calc(4rem + 5vw);
+  padding-left: calc(4rem + 5vw);
   padding-bottom: 2rem;
 }
 
@@ -28,11 +28,6 @@
   height: 100vh;
   background-color: colors.$black;
   transition: 0.5s ease;
-  .basketItem {
-    p {
-      padding-top: 1rem;
-    }
-  }
 
   .beerLabel {
     height: 4rem;
@@ -274,6 +269,24 @@
   }
 }
 
+.submit-button-wrapper {
+  position: relative;
+  padding: 0;
+  margin: 0;
+
+  .submit {
+    position: absolute;
+    white-space: nowrap;
+  }
+  .ghost-button {
+    position: absolute;
+    white-space: nowrap;
+    opacity: 0;
+    width: 100%;
+    z-index: 99;
+  }
+}
+
 .steps {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -284,7 +297,7 @@
 
 @media screen and (min-width: 792px) {
   .form-container {
-    padding-right: calc(5rem + 26vw);
-    padding-left: calc(5rem + 26vw);
+    padding-right: calc(5rem + 20vw);
+    padding-left: calc(5rem + 20vw);
   }
 }
