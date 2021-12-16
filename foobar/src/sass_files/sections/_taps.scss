@@ -1,8 +1,10 @@
 @use "../base/colors.scss";
 
 aside {
-  border: 1px solid colors.$white;
+  background-color: colors.$light-black;
   border-radius: 20px;
+  box-shadow: colors.$box-shaddow;
+
   h2 {
     text-align: center;
   }

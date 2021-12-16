@@ -1,5 +1,3 @@
-import BasketItem from "./basketItem";
-
 import "react-step-progress/dist/index.css";
 import StepOne from "./stepone";
 import StepTwo from "./steptwo.jsx";

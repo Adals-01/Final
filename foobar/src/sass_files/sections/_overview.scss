@@ -1,3 +1,4 @@
+@use "../base/colors.scss";
 .overview {
   margin-right: 10vw;
 
@@ -7,10 +8,10 @@
   .stats {
     display: flex;
     gap: 5vw;
-    border: 1px solid white;
+    border: 1px solid colors.$white;
     border-radius: 1rem;
     justify-content: center;
-
+    box-shadow: colors.$box-shaddow;
     .statsItem {
       text-align: center;
       padding-bottom: 1rem;
