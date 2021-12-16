@@ -18,7 +18,7 @@ export default function StepOne(props) {
         <p> {props.MyBasket.length} items</p>
       </div>
       <div className="bottom-cart">
-        <p className="total">Total:</p>
+        <p className="total">TOTAL:</p>
         <div>{/*  <p>{props.MyBasket.length * sum} DKK</p> */}</div>
       </div>
     </div>

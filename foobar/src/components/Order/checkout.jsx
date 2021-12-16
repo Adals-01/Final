@@ -9,8 +9,11 @@ import React, { useState } from "react";
 /* PROGRESS BAR */
 export default function Checkout(props) {
 
+
   const [currentActive, setCurrentActive] = useState(0)
   const [styleNext, setStyleNext] = useState(`translateX(calc(( ${currentActive}) * -33.3%`);
+
+  
 
   const GoNext = () => {
     let newCurrentActive = currentActive + 1;
@@ -30,7 +33,7 @@ export default function Checkout(props) {
     if (currentActive >= (props.nr - 1)) {
       return  <div  className="circle active">{props.nr}</div>;
     }
-    return <div  className="circle">1</div>;
+    return <div  className="circle">{props.nr}</div>;
   }  
   
   function BackButton(props) {
@@ -61,10 +64,11 @@ export default function Checkout(props) {
 
   
   return (
-    <div className="checkout">
+    <div className="">
       
       <div className="progress-placement">
         <div className="progress-container">
+        <div className="progress-bar"></div>
           <div className="circle-container">
             <Circle nr={1}/>
           </div>

@@ -34,8 +34,13 @@ export default function StepTwo(props) {
   /* action="" ref={form} onSubmit={handleSubmit} */
   return (
     <div className="form-container">
+<<<<<<< HEAD
       <form id="my-form" ref={form} onSubmit={handleSubmit}>
         <h2>Now you pay </h2>
+=======
+      <form id='my-form' ref={form} onSubmit={handleSubmit} >
+        <h2>Your payment details:</h2>
+>>>>>>> navbar
         <div className="form-group">
           <label htmlFor="email">Email</label>
           <span className="hint-mail" id="hint-mail">

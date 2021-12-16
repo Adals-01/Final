@@ -1,4 +1,6 @@
 import logo from "../assets/foobar-logo.svg";
+import SimpleBar from "simplebar-react";
+import "simplebar/dist/simplebar.min.css";
 import Overview from "../components/Overview";
 import StorageList from "../components/StorageList";
 import TapList from "../components/TapList";
@@ -18,10 +20,12 @@ export default function Dashboard(props) {
           <img className="foobar-logo" src={logo} alt={"foobar-logo"} />
         </div>
         <h2>Orders</h2>
+        <SimpleBar style={{ maxWidth: '70vw'  }}>
         <div className="serving-and-queue">
           {props.data.serving && <ServingList serving={props.data.serving} bartenders={props.data.bartenders} />}
           {props.data.queue && <QueueList queue={props.data.queue} />}
         </div>
+        </SimpleBar>
         <h2>Storage</h2>
         {props.data.storage && <StorageList storages={props.data.storage} />}
       </div>
