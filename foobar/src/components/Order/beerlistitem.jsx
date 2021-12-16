@@ -103,7 +103,7 @@ export default function Beerlistitem(props) {
         <p>{props.description.overallImpression}</p>
 
         <div>
-          <p>{props.alc}% alc</p>
+        {/*   <p>{props.alc}% alc</p> */}
           {(() => {
             if (price.length === 1) {
               return <p>{price}0 DKK</p>;

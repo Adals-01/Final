@@ -3,7 +3,11 @@
   grid-column-gap: 2rem;
   max-width: 65vw;
   padding-top: 1rem;
-  overflow-y: auto;
+  padding-bottom: 1rem;
+  /*   overflow-y: auto; */
+}
+.simplebar-scrollbar {
+  overflow-y: hidden;
 }
 
 .queue-list {

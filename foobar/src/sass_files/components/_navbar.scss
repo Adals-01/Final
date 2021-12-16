@@ -3,8 +3,8 @@
   position: relative;
 
   .icon {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 2.2rem;
+    height: 2.2rem;
   }
   .navbar {
     width: 100%;
@@ -15,8 +15,10 @@
     align-items: center;
     background-color: colors.$black;
     z-index: 99;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
     border-top: 1px solid colors.$white;
+    overflow: auto;
+    max-height: 90vh;
   }
 }
