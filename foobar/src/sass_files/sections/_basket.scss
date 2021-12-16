@@ -271,8 +271,6 @@
 
 .submit-button-wrapper {
   position: relative;
-  padding: 0;
-  margin: 0;
 
   .submit {
     position: absolute;
@@ -280,9 +278,8 @@
   }
   .ghost-button {
     position: absolute;
-    white-space: nowrap;
+
     opacity: 0;
-    width: 100%;
     z-index: 99;
   }
 }

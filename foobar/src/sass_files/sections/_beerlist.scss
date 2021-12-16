@@ -57,6 +57,11 @@
     font-size: inherit;
   }
 
+  .circleButton:hover {
+    filter: opacity(0.7);
+    box-shadow: colors.$box-shaddow;
+  }
+
   .button-wrapper {
     display: flex;
     justify-content: flex-end;
