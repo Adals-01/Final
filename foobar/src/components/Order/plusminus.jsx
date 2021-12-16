@@ -57,16 +57,6 @@ export default function PlusMinus(props) {
 
   return (
     <>
-      <div>
-        {/* <p>{props.alcohol}% alc</p> 
-          {(() => {
-            if (price.length === 1) {
-              return <p>{price}0 DKK</p>;
-            } else {
-              return <p>{price} DKK</p>;
-            }
-          })()} */}
-      </div>
       <div className="addContainer">
         <button className="circleButton" onClick={minusWrapper}>
           -

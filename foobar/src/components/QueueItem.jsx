@@ -1,12 +1,7 @@
 import GetTime from "./GetTime";
-import React, { forwardRef } from 'react';
-
-
+import React, { forwardRef } from "react";
 
 const QueueItem = forwardRef((props, ref) => {
-  /*   const queueItemArr = props.order.map((order, index) => <li key={index} order={order}></li>);
-  console.log(props.order);  */
-
   const order = props.order;
 
   //Only show 1 if dublicates
@@ -35,6 +30,5 @@ const QueueItem = forwardRef((props, ref) => {
       {beers}
     </div>
   );
-}
-)
-export default QueueItem 
+});
+export default QueueItem;

@@ -5,10 +5,9 @@ export default function StepOne(props) {
   let sum = props.MyBasket.reduce(function (previousValue, currentValue) {
     return previousValue + currentValue.price;
   }, initialValue);
-  
+
   const noDublicates = [...new Map(props.MyBasket.map((v) => [v.name, v])).values()];
   let basketItemsArr = noDublicates.map((MyBasket, index) => <BasketItem countTypeInBasket={props.countTypeInBasket} {...MyBasket} addToBasket={props.addToBasket} removeFromBasket={props.removeFromBasket} key={index} />);
-
 
   return (
     <div className="basket-wrapper form-container">
@@ -19,7 +18,6 @@ export default function StepOne(props) {
       </div>
       <div className="bottom-cart">
         <p className="total">TOTAL:</p>
-        <div>{/*  <p>{props.MyBasket.length * sum} DKK</p> */}</div>
       </div>
     </div>
   );

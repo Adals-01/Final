@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Beerlist from "./beerlist";
 import React, { useState } from "react";
 import Checkout from "./checkout";
@@ -49,7 +50,9 @@ export default function Mainpage(props) {
       <div className="navbar-container">
         <nav className="navbar">
           <img className="list-icon icon" src={getImageByKey("listicon")} alt={"list icon"} />
-          <img className="home-icon icon" src={getImageByKey("homeicon")} alt={"home icon"} />
+          <Link to={"/home"} className="link">
+            <img className="home-icon icon" src={getImageByKey("homeicon")} alt={"home icon"} />
+          </Link>
           <img onClick={toggleBasket} className="cart-icon icon" src={getImageByKey("carticon")} alt={"cart icon"} />
         </nav>
       </div>
@@ -62,7 +65,7 @@ export default function Mainpage(props) {
       <div className="main-orderform">
         <h1>Thirsty? Have a look at our selection.</h1>
         <Beerlist countTypeInBasket={countTypeInBasket} addToBasket={addToBasket} removeFromBasket={removeFromBasket} products={products} data={props.data} />
-        <div className="checkout" style = {{transform:moveBasket}}>
+        <div className="checkout" style={{ transform: moveBasket }}>
           <Checkout countTypeInBasket={countTypeInBasket} addToBasket={addToBasket} removeFromBasket={removeFromBasket} products={products} MyBasket={basket} />
         </div>
       </div>

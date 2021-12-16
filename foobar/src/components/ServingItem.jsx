@@ -17,9 +17,7 @@ function getImageByKey(key, i) {
 }
 
 const ServingItem = forwardRef((props, ref) => {
-  /*  const queueItemArr = props.order.map((order, index) => <QueueItemOrder key={index} order={order} />); */
   const order = props.order;
-  // const copyServingArray = [...servingArray];
 
   //Only show 1 if dublicates
   let nodublicates = [];

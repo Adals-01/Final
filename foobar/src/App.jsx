@@ -3,7 +3,7 @@ import "./App.scss";
 import Dashboard from "./components/Dashboard";
 import Homepage from "./components/Order/home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Beerlist from "./components/Order/beerlist";
+// import Beerlist from "./components/Order/beerlist";
 // import Beeritem from "./components/Order/beeritem";
 import Links from "./components/Links";
 import Mainpage from "./components/Order/mainpage";
@@ -42,10 +42,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // console.log("compareOldNew");
-    // console.log(oldServing);
-    // console.log(newServing);
-
     if (oldServing.length > 0) {
       console.log("length>0");
       oldServing.forEach((oldOrder, i, arr) => {
@@ -69,7 +65,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard data={data} ordersCompleted={ordersCompleted} />}></Route>
           <Route path="/home" element={<Homepage data={data} />}></Route>
           <Route path="/mainpage" element={<Mainpage data={beerdata} />}></Route>
-         {/*  <Route path="/beerlist" element={<Beerlist data={beerdata} />}></Route> */}
+          {/*  <Route path="/beerlist" element={<Beerlist data={beerdata} />}></Route> */}
         </Routes>
       </Router>
     </div>

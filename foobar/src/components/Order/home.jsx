@@ -4,7 +4,6 @@ import leaf2 from "../../assets/illustrations/leaf2.svg";
 import straw1 from "../../assets/illustrations/straw1.svg";
 import straw2 from "../../assets/illustrations/straw2.svg";
 import { Link } from "react-router-dom";
-// import Beerlist from "../Order/beerlist";
 
 export default function Homepage(data) {
   return (

@@ -17,7 +17,7 @@ export default function StepTwo(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    //console.log(form.current.checkValidity());
+
     if (form.current.checkValidity()) {
       console.log("test");
       post(data);
@@ -31,10 +31,9 @@ export default function StepTwo(props) {
     console.log(emailReg);
   }
 
-  /* action="" ref={form} onSubmit={handleSubmit} */
   return (
     <div className="form-container">
-      <form id='my-form' ref={form} onSubmit={handleSubmit} >
+      <form id="my-form" ref={form} onSubmit={handleSubmit}>
         <h2>Your payment details:</h2>
         <div className="form-group">
           <label htmlFor="email">Email</label>
