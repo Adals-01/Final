@@ -17,7 +17,7 @@ export default function StepTwo(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    //console.log(form.current.checkValidity());
+    console.log("refresh prevented");
     if (form.current.checkValidity()) {
       console.log("test");
       post(data);
@@ -26,6 +26,8 @@ export default function StepTwo(props) {
       form.current.reportValidity();
     }
   }
+
+
   function logEmail(e) {
     setPush(e.target.value);
     console.log(emailReg);

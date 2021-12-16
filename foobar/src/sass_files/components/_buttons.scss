@@ -24,6 +24,8 @@ button:hover {
   border: 1px solid colors.$white;
 }
 
-.simplebar-scrollbar::before {
-  background-color: rgb(51, 51, 51);
+.simplebar-scrollbar {
+  background-color: rgb(85, 85, 85);
+  border-radius: 1rem;
+  transition: 0.4 ease;
 }

@@ -4,6 +4,8 @@ aside {
   background-color: colors.$light-black;
   border-radius: 20px;
   box-shadow: colors.$box-shaddow;
+  padding-left: 2vw;
+  padding-right: 2vw;
 
   h2 {
     text-align: center;
@@ -12,10 +14,11 @@ aside {
 
 .beer-label {
   max-width: 100%;
-  width: 3vw;
+  width: 4vw;
   height: auto;
   display: block;
-  border-radius: 1.5rem;
+  border-radius: 2rem;
+  margin-left: 1rem;
 }
 
 .tap-list {
@@ -27,14 +30,16 @@ aside {
   max-height: calc(95vh / 7);
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .tap-levels-container {
   position: relative;
+  margin-left: 1rem;
 
   .bar-fluid {
     position: absolute;
+    transition: 0.3 ease;
   }
 }
 

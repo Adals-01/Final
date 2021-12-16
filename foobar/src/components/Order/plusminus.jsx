@@ -68,7 +68,7 @@ export default function PlusMinus(props) {
           })()} */}
       </div>
       <div className="addContainer">
-        <button className="circleButton" onClick={minusWrapper}><div class="circle-button-text">
+        <button className="circleButton" onClick={minusWrapper}><div className="circle-button-text">
           -</div>
         </button>
         <div className="plus-minus-btn">{counts}</div>
