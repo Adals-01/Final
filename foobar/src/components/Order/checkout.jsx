@@ -56,12 +56,12 @@ export default function Checkout(props) {
   function NextButton() {
     if (currentActive === 1) {
       return (
-        <>
-          <button onClick={GoSubmit}></button>
-          <button ref={submit} className="active" form="my-form" type="submit">
+        <div  className="submit-button-wrapper">
+          <button className="submit ghost-button" onClick={GoSubmit}>CONFIRM PAYMENT</button>
+          <button className="submit active"ref={submit}  form="my-form" type="submit">
             CONFIRM PAYMENT
           </button>
-        </>
+        </div>
       );
     }
     if (currentActive === 2) {

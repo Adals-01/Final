@@ -7,7 +7,7 @@ export default function Beerlistitem(props) {
   let beerimg = beer.replace(/\s+/g, "").toLowerCase();
 
   const alc = props.alc;
-  let price = alc.toString().split(".").join("");
+  let price = [alc].toString().split(".").join("")*10;
 
   let removeVariable = props.description.overallImpression.replace("Variable.", "");
   //Get first sentence (split at ".")
@@ -26,12 +26,11 @@ export default function Beerlistitem(props) {
         <div>
           {(() => {
             if (price.length === 1) {
-              return <p>{price}0 DKK</p>;
+              return <p>{props}0 DKK</p>;
             } else {
               return <p>{price} DKK</p>;
             }
           })()}
-
           <PlusMinus {...props} />
         </div>
       </div>
