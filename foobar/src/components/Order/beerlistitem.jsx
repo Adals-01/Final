@@ -41,23 +41,13 @@ export default function Beerlistitem(props) {
   const beer = props.name;
   let beerimg = beer.replace(/\s+/g, "").toLowerCase();
 
- const alc = props.alc;
- let price = alc.toString().split(".").join(""); 
+  const alc = props.alc;
+  let price = alc.toString().split(".").join("");
 
   const initialCount = 0;
   const [count, setCount] = useState(initialCount);
   const [basket, setBasket] = useState([]);
 
-  //BEER ITEM PAGE INFO
-  // var WordPOS = require("wordpos"),
-  // wordpos = new WordPOS();
-  // const [BeerInfo, showBeerInfo] = React.useState(false);
-  // const beerInfo = () => showBeerInfo(true);
-  // console.log(props);
-  // const getAdjectives = wordpos.getAdjectives("The angry bear chased the frightened little squirrel.", function (result) {
-  //   console.log(result);
-  // });
-  // getAdjectives;
   // const Results = () => (
   //   <div id="results" className="beerItem">
   //     <img className="beerLabel" src={getImageByKey(beerimg)} alt={beerimg} />
@@ -115,10 +105,10 @@ export default function Beerlistitem(props) {
             More info{BeerInfo ? <Results /> : null}
           </p> 
         </div>*/}
-      
-      <PlusMinus {...props}/>
+
+          <PlusMinus {...props} />
+        </div>
       </div>
-    </div>
     </div>
   );
 }

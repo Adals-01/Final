@@ -1,8 +1,11 @@
-import BasketItem from "./basketItem";
+// import BasketItem from "./basketItem";
 import { post } from "./post";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { push } from "./postemail";
 
 export default function StepTwo(props) {
+  const [emailReg, setPush] = useState("");
+
   /* POST form*/
   const form = useRef();
   const data = props.MyBasket.map((beer) => {
@@ -18,22 +21,27 @@ export default function StepTwo(props) {
     if (form.current.checkValidity()) {
       console.log("test");
       post(data);
+      push(emailReg);
     } else {
       form.current.reportValidity();
     }
+  }
+  function logEmail(e) {
+    setPush(e.target.value);
+    console.log(emailReg);
   }
 
   /* action="" ref={form} onSubmit={handleSubmit} */
   return (
     <div className="form-container">
-      <form id='my-form' ref={form} onSubmit={handleSubmit} >
+      <form id="my-form" ref={form} onSubmit={handleSubmit}>
         <h2>Now you pay </h2>
         <div className="form-group">
           <label htmlFor="email">Email</label>
           <span className="hint-mail" id="hint-mail">
             We will send you the reciept.
           </span>
-          <input id="email" name="xyz" type="email" placeholder="&nbsp;" aria-describedby="hint-mail" autoComplete="xyz" required />
+          <input id="email" name="xyz" onChange={logEmail} type="email" placeholder="&nbsp;" aria-describedby="hint-mail" autoComplete="xyz" required />
           <span className="error" id="err-mail" aria-live="assertive">
             Your email adress must contain an '@'
           </span>
@@ -55,21 +63,18 @@ export default function StepTwo(props) {
         <div className="field-container card-info">
           <label htmlFor="cardnumber">Card Number</label>
           <div className="card-info-sub">
-            <input id="cardnumber" /* placeholder="XXXX XXXX XXXX XXXX"  *//* pattern="\d{4} \d{4} \d{4} \d{4}" */   type="text" pattern="[0-9]*" inputMode="numeric"></input>
+            <input id="cardnumber" /* placeholder="XXXX XXXX XXXX XXXX"  */ /* pattern="\d{4} \d{4} \d{4} \d{4}" */ type="text" pattern="[0-9]*" inputMode="numeric"></input>
 
             <div className="exp-sec">
               {/* mm/yy */}
-              <input id="expirationdate" placeholder="MM/YY" type="text" /* pattern="[0-9]*" */ /* inputMode="numeric"  *//>
+              <input id="expirationdate" placeholder="MM/YY" type="text" /* pattern="[0-9]*" */ /* inputMode="numeric"  */ />
               {/* CVC */}
               <input placeholder="CVC" id="securitycode" type="text" pattern="[0-9]*" inputMode="numeric" />
             </div>
           </div>
         </div>
-        <div className="button-wrapper">
-        
-        </div>
+        <div className="button-wrapper"></div>
       </form>
-      
     </div>
   );
 }
