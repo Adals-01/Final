@@ -8,7 +8,6 @@ export default function PlusMinus(props) {
 
   function counting() {
     counts = props.countTypeInBasket(props.name);
-    console.log(counts);
     return counts;
   }
 
@@ -58,13 +57,12 @@ export default function PlusMinus(props) {
   return (
     <>
       <div className="addContainer">
-        <button className="circleButton" onClick={minusWrapper}><div className="circle-button-text">
-          -</div>
+        <button className="circleButton" onClick={minusWrapper}>
+          <div className="circle-button-text">-</div>
         </button>
         <div className="plus-minus-btn">{counts}</div>
         <button className="circleButton" onClick={plusWrapper}>
-        <div className="circle-button-text">
-          +</div>
+          <div className="circle-button-text">+</div>
         </button>
       </div>
     </>

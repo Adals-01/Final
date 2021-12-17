@@ -42,16 +42,12 @@ function App() {
 
   useEffect(() => {
     if (oldServing.length > 0) {
-      console.log("length>0");
       oldServing.forEach((oldOrder, i, arr) => {
-        console.log(oldOrder.id);
         const findIt = [...newServing].find((newOrder) => newOrder.id === oldOrder.id);
-        !findIt && console.log("order ready", oldOrder.id);
         !findIt && setOrdersCompleted(ordersCompleted + 1);
         i === arr.length - 1 && setOldServing([...newServing]);
       });
     } else {
-      console.log("length<0", newServing);
       setOldServing([...newServing]);
     }
   }, [newServing]);
