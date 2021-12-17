@@ -12,6 +12,25 @@ export default function Checkout(props) {
 
   const submit = useRef();
 
+    function NextButton() {
+    if (currentActive === 1) {
+      return (
+         <div className="submit-button-wrapper">
+          <button className="submit ghost-button" onClick={GoSubmit}>CONFIRM PAYMENT</button>
+          <button className="submit active" ref={submit}  form="my-form" type="submit">
+            CONFIRM PAYMENT
+          </button>
+        </div>
+          );
+    }
+    if (currentActive === 2) {
+      return <button style={{ visibility: "hidden" }}></button>;
+    } else {
+      return (
+        <button id="next" className="active" onClick={GoNext}>NEXT</button>
+      );
+    }
+  }
 
   const GoNext = () => {
     let newCurrentActive = currentActive + 1;
@@ -27,12 +46,6 @@ export default function Checkout(props) {
     }
   };
 
-  function Circle(props) {
-    if (currentActive >= props.nr - 1) {
-      return <div className="circle active">{props.nr}</div>;
-    }
-    return <div className="circle">{props.nr}</div>;
-  }
 
   const GoSubmit = () => {
     submit.current.click();
@@ -70,6 +83,13 @@ export default function Checkout(props) {
         <button id="next" className="active" onClick={GoNext}>NEXT</button>
       );
     }
+  }
+
+  function Circle(props) {
+    if (currentActive >= props.nr - 1) {
+      return <div className="circle active">{props.nr}</div>;
+    }
+    return <div className="circle">{props.nr}</div>;
   }
 
   return (
