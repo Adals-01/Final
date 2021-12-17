@@ -5,8 +5,9 @@ export default function StepOne(props) {
     return previousValue + currentValue.price;
   }, initialValue);
   const newsum = sum.toString().split(".").join("");
-  console.log(newsum);
-  const noDublicates = [...new Map(props.MyBasket.map((v) => [v.name, v])).values()];
+
+  
+  const noDublicates = [...new Map(props.MyBasket.map((item) => [item.name, item])).values()];
   let basketItemsArr = noDublicates.map((MyBasket, index) => <BasketItem countTypeInBasket={props.countTypeInBasket} {...MyBasket} addToBasket={props.addToBasket} removeFromBasket={props.removeFromBasket} key={index} />);
 
   return (
