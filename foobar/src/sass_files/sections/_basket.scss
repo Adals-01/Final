@@ -184,11 +184,6 @@
     font-size: 0.9rem;
   }
 
-  /*   #expirationdate,
-  #securitycode {
-  }
- */
-
   input#expirationdate,
   input#securitycode,
   input#cardnumber {
@@ -232,7 +227,6 @@
 
   .next {
     padding-bottom: 0.6rem;
-    font-weight: 400;
     display: flex;
     justify-content: flex-end;
     margin-top: 2rem;
@@ -240,6 +234,10 @@
 
   .mask {
     overflow: hidden;
+  }
+
+  #prev {
+    transform: translateX(-5rem);
   }
 }
 
@@ -271,6 +269,7 @@
 
 .submit-button-wrapper {
   position: relative;
+  transform: translateX(-9rem);
 
   .submit {
     position: absolute;
@@ -278,6 +277,7 @@
   }
   .ghost-button {
     position: absolute;
+    white-space: nowrap;
 
     opacity: 0;
     z-index: 99;

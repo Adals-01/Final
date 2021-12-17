@@ -45,14 +45,13 @@ export default function Checkout(props) {
     }
     if (currentActive === 1) {
       return (
-        <button id="prev" onClick={GoBack}>
-          BACK
-        </button>
+        <button id="prev" onClick={GoBack}>BACK</button>
       );
     } else {
       return <button style={{ visibility: "hidden" }}></button>;
     }
   }
+
   function NextButton() {
     if (currentActive === 1) {
       return (
@@ -68,9 +67,7 @@ export default function Checkout(props) {
       return <button style={{ visibility: "hidden" }}></button>;
     } else {
       return (
-        <button id="next" className="active" onClick={GoNext}>
-          NEXT
-        </button>
+        <button id="next" className="active" onClick={GoNext}>NEXT</button>
       );
     }
   }
