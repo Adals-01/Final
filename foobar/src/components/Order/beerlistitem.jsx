@@ -35,11 +35,24 @@ function addToBasket(product) {
 }
 
 export default function Beerlistitem(props) {
+  function Price() {
+    const beer = props.name;
+    let price;
+    if (beer === "El Hefe" || beer === "Hollaback Lager" || beer === "Hoppily Ever After" || beer === "Mowintime" || beer === "Row 26" || beer === "Steampunk") {
+      let price = 65;
+      return <p>{price}</p>;
+    } else if (beer === "Fairy Tale Ale" || beer === "GitHop" || beer === "Ruined Childhood" || beer === "Sleighride") {
+      let price = 75;
+      console.log(price);
+      return <p>{price}</p>;
+    }
+  }
   const beer = props.name;
   const alc = props.alc;
 
   let beerimg = beer.replace(/\s+/g, "").toLowerCase();
-  let price = alc.toString().split(".").join("");
+
+  // let price = alc.toString().split(".").join("");
 
   const initialCount = 0;
   const [count, setCount] = useState(initialCount);
@@ -100,13 +113,14 @@ export default function Beerlistitem(props) {
 
         <div>
           <p>{props.alc}% alc</p>
-          {(() => {
+          <Price />
+          {/* {(() => {
             if (price.length === 1) {
               return <p>{price}0 DKK</p>;
             } else {
               return <p>{price} DKK</p>;
             }
-          })()}
+          })()} */}
           {/* <p onClick={beerInfo}>
             More info{BeerInfo ? <Results /> : null}
           </p> */}
