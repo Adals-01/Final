@@ -6,14 +6,23 @@ export default function Beerlistitem(props) {
   const beer = props.name;
   let beerimg = beer.replace(/\s+/g, "").toLowerCase();
   function Price() {
+    let storage = props.dashboard;
+
+    // finding lowest amount number in storage
+    let amountArr = [];
+    amountArr = storage.map((item) => <p>{item.amount}</p>);
+    console.log(amountArr);
+
+    const min = Math.min(...amountArr.props.children);
+    console.log(min);
+
+    //creating price
     const beer = props.name;
-    let offeroftheday = 
     if (beer === "El Hefe" || beer === "Hollaback Lager" || beer === "Hoppily Ever After" || beer === "Mowintime" || beer === "Row 26" || beer === "Steampunk") {
       let price = 65;
       return <p>{price}</p>;
     } else if (beer === "Fairy Tale Ale" || beer === "GitHop" || beer === "Ruined Childhood" || beer === "Sleighride") {
       let price = 75;
-      console.log(price);
       return <p>{price}</p>;
     }
   }
