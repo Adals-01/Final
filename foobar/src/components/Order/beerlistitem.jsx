@@ -5,9 +5,18 @@ import PlusMinus from "./plusminus";
 export default function Beerlistitem(props) {
   const beer = props.name;
   let beerimg = beer.replace(/\s+/g, "").toLowerCase();
-
-  const alc = props.alc;
-  let price = [alc].toString().split(".").join("")*10;
+  function Price() {
+    const beer = props.name;
+    let offeroftheday = 
+    if (beer === "El Hefe" || beer === "Hollaback Lager" || beer === "Hoppily Ever After" || beer === "Mowintime" || beer === "Row 26" || beer === "Steampunk") {
+      let price = 65;
+      return <p>{price}</p>;
+    } else if (beer === "Fairy Tale Ale" || beer === "GitHop" || beer === "Ruined Childhood" || beer === "Sleighride") {
+      let price = 75;
+      console.log(price);
+      return <p>{price}</p>;
+    }
+  }
 
   let removeVariable = props.description.overallImpression.replace("Variable.", "");
   //Get first sentence (split at ".")
@@ -24,13 +33,7 @@ export default function Beerlistitem(props) {
         <p>{props.alc}% alc</p>
 
         <div>
-          {(() => {
-            if (price.length === 1) {
-              return <p>{props}0 DKK</p>;
-            } else {
-              return <p>{price} DKK</p>;
-            }
-          })()}
+          <Price />
           <PlusMinus {...props} />
         </div>
       </div>
