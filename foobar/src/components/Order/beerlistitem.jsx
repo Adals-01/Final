@@ -1,3 +1,6 @@
+const wordpos = new WordPOS({
+  dictPath: "https://cdn.jsdelivr.net/npm/wordpos-web@1.0.2/dict"
+})
 import React, { useState } from "react";
 // import { Link } from "react-router-dom";
 import elhefe from "../../assets/elhefe.png";
@@ -37,7 +40,6 @@ function addToBasket(product) {
 export default function Beerlistitem(props) {
   const beer = props.name;
   const alc = props.alc;
-
   let beerimg = beer.replace(/\s+/g, "").toLowerCase();
   let price = alc.toString().split(".").join("");
 
@@ -45,49 +47,76 @@ export default function Beerlistitem(props) {
   const [count, setCount] = useState(initialCount);
   const [basket, setBasket] = useState([]);
 
+
+/* 
+  wordpos.getAdjectives(`${props.description.aroma}`, function(result){
+    tweetAdjectives = result;
+  }) */
+
+
   //BEER ITEM PAGE INFO
-  // var WordPOS = require("wordpos"),
-  // wordpos = new WordPOS();
-  // const [BeerInfo, showBeerInfo] = React.useState(false);
-  // const beerInfo = () => showBeerInfo(true);
-  // console.log(props);
-  // const getAdjectives = wordpos.getAdjectives("The angry bear chased the frightened little squirrel.", function (result) {
-  //   console.log(result);
-  // });
-  // getAdjectives;
-  // const Results = () => (
-  //   <div id="results" className="beerItem">
-  //     <img className="beerLabel" src={getImageByKey(beerimg)} alt={beerimg} />
-  //     <div className="beerPoints">
-  //       <div class="point">
-  //         <p>CATEGORY</p>
-  //         <h3>{props.category}</h3>
-  //       </div>
-  //       <div class="point">
-  //         <p>ALCOHOL</p>
-  //         <h3>{props.alc}</h3>
-  //       </div>
-  //       <div class="point">
-  //         <p>PRICE</p>
-  //         <h3>{price}</h3>
-  //       </div>
-  //     </div>
-  //     <h2>OVERALL IMPRESSION</h2>
-  //     <p>{props.overallImpression}</p>
-  //     <div>
-  //       <div>
-  //         <h3>FLAVOR</h3>
-  //         <h3>AROMA</h3>
-  //         <h3>MOUTHFEEL</h3>
-  //       </div>
-  //       <div>
-  //         <h3 className="adjective"></h3>
-  //         <h3 className="adjective"></h3>
-  //         <h3 className="adjective"></h3>
-  //       </div>
-  //     </div>
-  //   </div>
-  // );
+  const [BeerInfo, showBeerInfo] = React.useState(false);
+  const beerInfo = () => showBeerInfo(true);
+
+  /* let a = wordpos.getAdjectives(`${props.description.aroma}`)
+  .then((successMsg) => {
+    console.log("Success:" + successMsg);
+})
+.catch((errorMsg) => { 
+    console.log("Error:" + errorMsg);
+})  */
+
+
+
+wordpos.getAdjectives(`${props.description.aroma}`,console.log)
+  .then(console.log)
+  .catch(console.error);
+  
+  function doSomethingElse() {
+    return <div>hello</div>
+}
+
+
+/* function doSomethingElse() {
+  
+} */
+
+// true 'awesome'
+  const Results = () => (
+    <div id="results" className="beerItem">
+      <img className="beerLabel" src={getImageByKey(beerimg)} alt={beerimg} />
+      <div className="beerPoints">
+        <div className="point">
+          <p>CATEGORY</p>
+          <h3>{props.category}</h3>
+        </div>
+        <div className="point">
+          <p>ALCOHOL</p>
+          <h3>{props.alc}</h3>
+        </div>
+        <div className="point">
+          <p>PRICE</p>
+          <h3>{price}</h3>
+          
+        </div>
+      </div>
+      <h2>OVERALL IMPRESSION</h2>
+      <p>{props.overallImpression}</p>
+      <div>
+        <div>
+          <h3>FLAVOR</h3>
+          <h3>AROMA</h3>
+          
+          <h3>MOUTHFEEL</h3>
+        </div>
+        <div>
+          <h3 className="adjective"></h3>
+          <h3 className="adjective"></h3>
+          <h3 className="adjective"></h3>
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <div className="beerListItem">
@@ -107,9 +136,7 @@ export default function Beerlistitem(props) {
               return <p>{price} DKK</p>;
             }
           })()}
-          {/* <p onClick={beerInfo}>
-            More info{BeerInfo ? <Results /> : null}
-          </p> */}
+          <div onClick={beerInfo}>More info{BeerInfo ? <Results /> : null}</div>
         </div>
         <div className="addContainer">
           <button
