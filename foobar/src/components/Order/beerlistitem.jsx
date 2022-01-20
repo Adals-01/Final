@@ -1,66 +1,80 @@
-import React from "react";
 import getImageByKey from "./getImageByKey";
 import PlusMinus from "./plusminus";
-import StorageItem from "./amount";
-// import React, { useState, useEffect } from "react";
-
-// const [arrayx, setArrayx] = UseState([]);
+// import Price from "./amount";
+import React, { useState } from "react";
 
 export default function Beerlistitem(props) {
+  const [discountedbeer, setDiscountedBeer] = useState([]);
   const beer = props.name;
-  let beerimg = beer.replace(/\s+/g, "").toLowerCase();
-
-  // function amount(myArray) {
-  //   let extractedArray = [];
-  //   for (let i = 0; i < myArray.length; i++) {
-  //     extractedArray.push(myArray[i]);
-  //   }
-  //   console.log("this is" + extractedArray);
-  // }
+  let isDiscounted;
 
   function Price() {
     let storage = props.dashboard;
-
-    //amount(JSON.parse(storage));
-    // finding highest amount number in storage
-    // let amountArr = [];
-
-    // let arr = [];
-
-    // console.log(amountArr);
-
-    // console.log(highinstock);
-    // const storageArr = storage.map((product, index) => <StorageItem {...product} key={index} dashboard={props.dashboard} />);
-
-    // function iterate(item) {
-    //   let amountArr = storage.map((item) => item.amount);
-    //   const highinstock = Math.max(...amountArr);
-    //   if (item.amount === highinstock) {
-    //     console.log(item.name + "+" + highinstock);
-    //     let newprice = `${price}` / 10;
-    //     return newprice;
-    //   }
-    //   return highinstock;
-    // }
-    // storage.forEach(iterate);
-    //creating price
+    storage.forEach(iterate);
     const beer = props.name;
+    //Dividing beers by prices
     if (beer === "El Hefe" || beer === "Hollaback Lager" || beer === "Hoppily Ever After" || beer === "Mowintime" || beer === "Row 26" || beer === "Steampunk") {
+      //creating price
       let price = 65;
-
-      return <p>{price}</p>;
+      //check if beer is discounted and give it new price
+      if (beer === discountedbeer) {
+        let discount = price * 0.1;
+        let newprice = price - discount;
+        isDiscounted = true;
+        console.log(newprice);
+        return (
+          <div>
+            <h3>10% Discount</h3>
+            <p>{newprice}0 DKK</p>
+          </div>
+        );
+      } else {
+        return <p>{price} DKK</p>;
+      }
     } else if (beer === "Fairy Tale Ale" || beer === "GitHop" || beer === "Ruined Childhood" || beer === "Sleighride") {
+      //creating price
       let price = 75;
-      return <p>{price}</p>;
+      //check if beer is discounted and give it new price
+      if (beer === discountedbeer) {
+        let discount = price * 0.1;
+        let newprice = price - discount;
+        isDiscounted = true;
+        return (
+          <div>
+            <h3>10% Discount</h3>
+            <p>{newprice}0 DKK</p>
+          </div>
+        );
+      }
+      return <p>{price} DKK</p>;
     }
+  }
+  //create array of item amounts to filter through for highest number
+  function iterate(item) {
+    let storage = props.dashboard;
+    let amountArr = storage.map((item) => item.amount);
+    const highinstock = Math.max(...amountArr);
+    //add beer with highest number in storage to usestate
+    if (item.amount === highinstock) {
+      const discountedbeer = item.name;
+      setDiscountedBeer(discountedbeer);
+      return <p>{discountedbeer}</p>;
+    }
+  }
+  console.log(discountedbeer);
+
+  //add CSS styling to discounted beer
+  if (props.name === discountedbeer) {
+    isDiscounted = true;
+  } else {
+    isDiscounted = false;
   }
 
   let removeVariable = props.description.overallImpression.replace("Variable.", "");
-  //Get first sentence (split at ".")
   let description = removeVariable.split(".", 1)[0];
-
+  let beerimg = beer.replace(/\s+/g, "").toLowerCase();
   return (
-    <div className="beerListItem">
+    <div className="beerListItem" style={{ border: isDiscounted ? "white dashed 1px" : "none" }}>
       <div className="leftSide">
         <img className="beerLabel" src={getImageByKey(beerimg)} alt={beerimg} />
       </div>
