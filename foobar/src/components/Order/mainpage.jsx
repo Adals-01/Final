@@ -11,25 +11,26 @@ export default function Mainpage(props) {
   const [products, setProducts] = useState([]);
   const [basket, setBasket] = useState([]);
 
+<<<<<<< HEAD
   console.log(props +"14");
 
+=======
+>>>>>>> 62dc24bc9b5812b96f14acd17ecf8808dca8d124
   function toggleBasket() {
     setbasketPlacement((basketPlacement) => !basketPlacement);
     if (basketPlacement === true) {
       setmoveBasket("translateY(100vh)");
-
     }
     if (basketPlacement === false) {
       setmoveBasket("translateY(0vh)");
-     
     }
   }
 
   function goToList() {
     if (basketPlacement === true) {
       toggleBasket();
-  }}
-
+    }
+  }
 
   function addToBasket(product) {
     setBasket(function (oldBasket) {
@@ -70,10 +71,16 @@ export default function Mainpage(props) {
   return (
     <main>
       <Navbar />
-      <div className="foobar-beerlist-logo"><img  src={logo} alt={"foobar-logo"} /></div>
+      <div className="foobar-beerlist-logo">
+        <img src={logo} alt={"foobar-logo"} />
+      </div>
       <div className="main-orderform">
         <h1>Thirsty? Have a look at our selection.</h1>
+<<<<<<< HEAD
         <Beerlist countTypeInBasket={countTypeInBasket} addToBasket={addToBasket} removeFromBasket={removeFromBasket} products={products} data={props.data}  dashboard={props.dashboard} />
+=======
+        <Beerlist countTypeInBasket={countTypeInBasket} addToBasket={addToBasket} removeFromBasket={removeFromBasket} products={products} data={props.data} dashboard={props.dashboard} />
+>>>>>>> 62dc24bc9b5812b96f14acd17ecf8808dca8d124
         <div className="checkout" style={{ transform: moveBasket }}>
           <Checkout countTypeInBasket={countTypeInBasket} addToBasket={addToBasket} removeFromBasket={removeFromBasket} products={products} MyBasket={basket} />
         </div>
