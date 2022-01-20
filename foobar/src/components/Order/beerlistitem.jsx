@@ -65,23 +65,62 @@ export default function Beerlistitem(props) {
 .catch((errorMsg) => { 
     console.log("Error:" + errorMsg);
 })  */
+const [aromadata, setAromas] = useState([]);
 
+function Aroma() {
+  const aromaItems = wordpos.getAdjectives(`${props.description.aroma}`)
+/*   .then((response) => response.json()) */
+  .then((adjective) => {
+/*     console.log(adjective); */
+    return adjective;
+  });
 
-
-wordpos.getAdjectives(`${props.description.aroma}`,console.log)
-  .then(console.log)
-  .catch(console.error);
+  const printAddress = async () => {
+    const a = await aromaItems;
+    console.log(a);
+    const aromaArr = a.map((aroma, index) => <div>{aroma}</div>)
+    /* setAromas(aromaAr) */
+    console.log(aromaArr);
+  };
+ 
+  return <div>{ printAddress()}</div>
+ /*  aromaItems.then((a) => {
+    console.log(a);
+    return <div>{a}</div>;   */
   
-  function doSomethingElse() {
-    return <div>hello</div>
-}
+ 
+ }
+/*  console.log(aromaItems); 
+  
+ return <div>{printAddress()}</div>
+} */
+/* console.log(a)
+return  <div>{printAddress()}</div>
+ */
+
+/* return <div>{a}</div> */
+  /* .then(console.log) 
+  .then((beerdata) => {
+  setBeers(beerdata) 
+   .then(function(result) {
+  return <div>{result}</div>  */
+
+/* 
+   const aromaResult = wordpos.getAdjectives(`${props.description.aroma}`)
+  
+   console.log(aromaResult); */
+ /*   const aromaArr =  aromaResult.map((aroma) => aroma );  */
+
+  /* return <div>{aromaResult}</div> */ 
+
+   
 
 
 /* function doSomethingElse() {
   
 } */
 
-// true 'awesome'
+
   const Results = () => (
     <div id="results" className="beerItem">
       <img className="beerLabel" src={getImageByKey(beerimg)} alt={beerimg} />
@@ -106,7 +145,7 @@ wordpos.getAdjectives(`${props.description.aroma}`,console.log)
         <div>
           <h3>FLAVOR</h3>
           <h3>AROMA</h3>
-          
+          <Aroma/>
           <h3>MOUTHFEEL</h3>
         </div>
         <div>
