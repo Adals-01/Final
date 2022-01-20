@@ -70,7 +70,7 @@ export default function Mainpage(props) {
         <img src={logo} alt={"foobar-logo"} />
       </div>
       <div className="main-orderform">
-        <h1>Thirsty? Have a look at our selection.</h1>
+        <h1>Thirsty? Have a look at our selection:</h1>
         <Beerlist countTypeInBasket={countTypeInBasket} addToBasket={addToBasket} removeFromBasket={removeFromBasket} products={products} data={props.data} dashboard={props.dashboard} />
         <div className="checkout" style={{ transform: moveBasket }}>
           <Checkout countTypeInBasket={countTypeInBasket} addToBasket={addToBasket} removeFromBasket={removeFromBasket} products={products} MyBasket={basket} />
