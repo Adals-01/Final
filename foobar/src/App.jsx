@@ -59,7 +59,7 @@ function App() {
           <Route exact path="/" element={<Links />}></Route>
           <Route path="/dashboard" element={<Dashboard data={data} ordersCompleted={ordersCompleted} />}></Route>
           <Route path="/home" element={<Homepage data={data} />}></Route>
-          <Route path="/mainpage" element={<Mainpage data={beerdata} />}></Route>
+          <Route path="/mainpage" element={<Mainpage data={beerdata} dashboard={data} />}></Route>
           {/*  <Route path="/beerlist" element={<Beerlist data={beerdata} />}></Route> */}
         </Routes>
       </Router>

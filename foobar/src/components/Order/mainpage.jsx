@@ -11,6 +11,7 @@ export default function Mainpage(props) {
   const [products, setProducts] = useState([]);
   const [basket, setBasket] = useState([]);
 
+  console.log(props +"14");
 
   function toggleBasket() {
     setbasketPlacement((basketPlacement) => !basketPlacement);
@@ -72,7 +73,7 @@ export default function Mainpage(props) {
       <div className="foobar-beerlist-logo"><img  src={logo} alt={"foobar-logo"} /></div>
       <div className="main-orderform">
         <h1>Thirsty? Have a look at our selection.</h1>
-        <Beerlist countTypeInBasket={countTypeInBasket} addToBasket={addToBasket} removeFromBasket={removeFromBasket} products={products} data={props.data} />
+        <Beerlist countTypeInBasket={countTypeInBasket} addToBasket={addToBasket} removeFromBasket={removeFromBasket} products={products} data={props.data}  dashboard={props.dashboard} />
         <div className="checkout" style={{ transform: moveBasket }}>
           <Checkout countTypeInBasket={countTypeInBasket} addToBasket={addToBasket} removeFromBasket={removeFromBasket} products={products} MyBasket={basket} />
         </div>
